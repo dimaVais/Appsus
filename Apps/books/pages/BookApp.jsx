@@ -1,4 +1,4 @@
-import 'assets/css/book-style.css'
+import '../assets/css/book-style.css'
 
 export class BookApp extends React.Component {
 
