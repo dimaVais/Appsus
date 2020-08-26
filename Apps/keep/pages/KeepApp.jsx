@@ -9,6 +9,7 @@ export class KeepApp extends React.Component {
 
 
     state = {
+        selectedNote: {},
         txtValue: '',
         notes: []
 

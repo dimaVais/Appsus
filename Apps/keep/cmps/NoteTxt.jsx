@@ -11,7 +11,7 @@ export class NoteTxt extends React.Component {
 
         return (
 
-            <div className="note-txt-box">
+            <div className="note-txt-box list-item">
                 <div className="note-txt-value">
                     <p>{this.props.note.info.txt}</p>
                 </div>

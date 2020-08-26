@@ -41,6 +41,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
+        backgroundColor: '#3b5998',
         info: {
             txt: "Fullstack Me Baby!"
         }
@@ -49,6 +50,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
+        backgroundColor: '#3b5998',
         info: {
             txt: "Buy eggs for dinner to make eggs salad"
         }
@@ -57,6 +59,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
+        backgroundColor: '#3b5998',
         info: {
             txt: "Talk to mom"
         }
@@ -65,6 +68,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
+        backgroundColor: '#3b5998',
         info: {
             txt: "Buy Amazon stock when it drops to $1500"
         }
@@ -73,6 +77,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
+        backgroundColor: '#3b5998',
         info: {
             txt: "Tax refund! (important)"
         }
@@ -81,6 +86,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
+        backgroundColor: '#3b5998',
         info: {
             txt: "Make a list for the trip"
         }
@@ -88,6 +94,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
+        backgroundColor: '#3b5998',
         info: {
             txt: "Call the babysitter"
         }
@@ -99,6 +106,7 @@ var notes = [{
     //         url: "http://some-img/me",
     //         title: "Me playing Mi"
     //     },
+    //      backgroundColor: '#3b5998',
     //     style: {
     //         backgroundColor: "#00d"
     //     }
@@ -112,6 +120,7 @@ var notes = [{
     //                 txt: "Do that",
     //                 doneAt: null
     //             },
+    //          backgroundColor: '#3b5998',
     //             {
     //                 txt: "Do this",
     //                 doneAt: 187111111
