@@ -1,5 +1,22 @@
-
-
 .mail-header {
     color: rgb(19, 224, 231);
+}
+
+.main-side-container {
+    width: 20%;
+    height: 100vh;
+      background-color: #3b5998;
+    border: solid black 2px;
+
+}
+
+.mail-list-container{
+    width: 80%;
+    height: 100vh;
+    background-color: whitesmoke;
+    border: solid black 2px;
+}
+
+.side-btn{
+    margin-top:20px;
 }
