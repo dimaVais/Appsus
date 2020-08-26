@@ -1,6 +1,6 @@
-import '../assets/css/keep-style.css'
-import { KeepList } from '../cmps/KeepList.jsx'
-import { KeepService } from '../services/keep-service.js'
+import 'assets/css/keep-style.css'
+import { KeepList } from '../Apps/keep/cmps/KeepList.jsx'
+import { KeepService } from '../Apps/keep/services/keep-service.js'
 
 export class KeepApp extends React.Component {
 

@@ -1,7 +1,7 @@
 import {Home} from './pages/Home.jsx'
-import {BookApp} from './pages/BookApp.jsx'
-import {KeepApp} from './pages/KeepApp.jsx'
-import {MailApp} from './pages/MailApp.jsx'
+import {BookApp} from 'Apps/books/pages/BookApp.jsx'
+import {KeepApp} from 'Apps/keep/pages/KeepApp.jsx'
+import {MailApp} from 'Apps//mail/pages/MailApp.jsx'
 import {NavBar} from 'general-cmps/NavBar.jsx'
 
 const Router = ReactRouterDOM.HashRouter
