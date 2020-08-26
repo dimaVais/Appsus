@@ -1,6 +1,6 @@
 import 'assets/css/mail-style.css'
-import { SideMenu } from '../Apps/mail/cmps/SideMenu.jsx'
-import { MailList } from '../Apps/mail/cmps/MailList.jsx'
+import { SideMenu } from '../cmps/SideMenu.jsx'
+import { MailList } from '../cmps/MailList.jsx'
 
 export class MailApp extends React.Component {
 
