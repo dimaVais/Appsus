@@ -9,6 +9,11 @@ export function KeepList(props) {
         KeepService.removeNote(noteId).then(props.loadNotes())
     }
 
+    function onSetBackgroundColor(note, color){
+        console.log(note, color)
+        KeepService.setBackGroundColor(note, color)
+    }
+
 
     const { notes } = props
 
@@ -16,7 +21,7 @@ export function KeepList(props) {
         <div className="notes-list-box">
             <ul className="notes-list-itmes">
                 {notes.map(note =>
-                    <li key={note.id}><NoteTxt note={note} onRemove={onRemove} /></li>
+                    <li key={note.id}><NoteTxt note={note} onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor}  /></li>
                 )}
             </ul>
 

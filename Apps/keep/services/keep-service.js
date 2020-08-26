@@ -3,7 +3,8 @@ export const KeepService = {
     query,
     getNoteById,
     addNote,
-    removeNote
+    removeNote,
+    setBackGroundColor
 
 }
 
@@ -34,6 +35,10 @@ function addNote(txt) {
     }
     notes.push(note);
     return Promise.resolve(notes);
+}
+
+function setBackGroundColor(note, color) {
+    note.backgroundColor = color
 }
 
 
