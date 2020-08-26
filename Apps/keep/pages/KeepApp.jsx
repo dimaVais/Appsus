@@ -1,4 +1,5 @@
 import '../assets/css/keep-style.css'
+import '../../../general-assets/general-css/helpers.css'
 import { KeepList } from '../cmps/KeepList.jsx'
 import { KeepService } from '../services/keep-service.js'
 
@@ -8,6 +9,7 @@ export class KeepApp extends React.Component {
 
 
     state = {
+        selectedNote: {},
         txtValue: '',
         notes: []
 
@@ -41,13 +43,13 @@ export class KeepApp extends React.Component {
             <section className="keep-main-container">
                 <div className="note-input-box">
                     <form>
-                        <input name="name" placeholder="Add New Note" type="text" value={this.state.txtValue} onChange={this.onInputChange} />
+                        <input className="note-input" placeholder="Add New Note" type="text" value={this.state.txtValue} onChange={this.onInputChange} />
                         <button type="button" onClick={this.onAddNote} className="add-note-btn">Add</button>
 
                     </form>
                 </div>
                 <div>
-                    <KeepList  notes={this.state.notes} />
+                    <KeepList loadNotes={this.loadNotes}  notes={this.state.notes} />
                 </div>
             </section>
         )
