@@ -1,4 +1,8 @@
-
+export const utilService = {
+  makeId,
+  getRandomInt,
+  getRandomColor
+}
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';

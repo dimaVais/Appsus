@@ -5,18 +5,46 @@
 .main-side-container {
     width: 20%;
     height: 100vh;
-      background-color: #3b5998;
-    border: solid black 2px;
-
+    background-color: #3b5998;
+    border: solid grey 2px;
 }
 
-.mail-list-container{
+.mail-list-container {
     width: 80%;
     height: 100vh;
     background-color: whitesmoke;
-    border: solid black 2px;
+    border: solid grey 2px;
 }
 
-.side-btn{
-    margin-top:20px;
+.side-btn {
+    margin-top: 20px;
+}
+
+.mail-list {
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mail-item {
+    border: solid rgb(172, 158, 158) 1px;
+}
+
+.mail-item:hover {
+    box-shadow: inset 0 0 10px blue;
+}
+
+.mail-item div .mail-unread :hover {
+    color:blue;
+}
+
+
+.mail-item div .mail-delete :hover {
+    color:red;
+}
+
+.mail-from{
+    margin-left:30px;
+    font-weight: bold;
 }

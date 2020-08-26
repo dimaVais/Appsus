@@ -15,7 +15,7 @@ export class SideMenu extends React.Component {
         return (
 
             <div className='main-side-container flex-col'>
-                <Compose />
+                <Compose onOpenModal={this.props.onOpenModal} />
                 <div className='flex-col'> 
                     <Inbox />
                     <Stared />
