@@ -52,6 +52,11 @@
     flex-direction: column;
 }
 
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+}
+
 .justify-center {
     justify-content: center;
 }

@@ -16,10 +16,27 @@
 }
 
 .modal-content {
-    background: white;
-    max-width: 90%;
-    min-width: 80%;
-    min-height: 400px;
+    background-image: url('../img/modal.jpg');
+    background-repeat: no-repeat;
+    max-width: 50%;
+    min-width: 50%;
+    min-height: 500px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     position: relative;
+
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
 }

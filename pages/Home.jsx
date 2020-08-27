@@ -12,7 +12,7 @@ export class Home extends React.Component {
     render() {
         return (
             <section>
-                <NavLink to="/mail">Mail</NavLink>
+                <NavLink to="/mail/list">Mail</NavLink>
                 <NavLink to="/keep">Keep</NavLink>
                 <NavLink to="/book">Book</NavLink>
 

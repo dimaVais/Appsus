@@ -4,6 +4,6 @@ export function Compose(props) {
 
 
     return (
-        <button calssName='compose-btn' onClick={props.onOpenModal}> COMPOSE</button>
+        <button className='compose-btn' onClick={props.onOpenModal}> COMPOSE</button>
     )
 }

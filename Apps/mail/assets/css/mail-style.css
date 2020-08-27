@@ -9,7 +9,7 @@
     border: solid grey 2px;
 }
 
-.mail-list-container {
+.inner-page-container {
     width: 80%;
     height: 100vh;
     background-color: whitesmoke;
@@ -31,20 +31,103 @@
     border: solid rgb(172, 158, 158) 1px;
 }
 
+.mail-link {
+    color: black;
+    text-decoration: none;
+}
+
 .mail-item:hover {
     box-shadow: inset 0 0 10px blue;
 }
 
-.mail-item div .mail-unread :hover {
-    color:blue;
+.mail-unread:hover {
+    color: blue;
 }
 
-
-.mail-item div .mail-delete :hover {
-    color:red;
+.mail-delete :hover {
+    color: red;
 }
 
-.mail-from{
-    margin-left:30px;
+.unread-mail {
     font-weight: bold;
+}
+
+.mail-from {
+    margin-left: 30px;
+    min-width: 80px;
+}
+
+.mail-title {
+    margin-left: 70px;
+}
+
+.btn-data-menu button {
+    margin-right: 10px;
+}
+
+.new-mail {
+    max-width: 70%;
+    min-height: 400px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: whiteSmoke;
+    padding: 30px;
+}
+
+.input-from {
+    margin-left: 30px;
+}
+
+.input-subject {
+    margin-left: 14px;
+    height: 30px;
+}
+
+.new-mail input {
+    width: 80%
+}
+
+.compose-btn {
+    background-color: #DB3A0D;
+    height: 28px;
+    display: block;
+    width: 118px;
+    text-align: center;
+    line-height: 28px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 11px;
+    border-radius: 3px;
+    border: 1px solid #DB3A0D;
+}
+
+.compose-btn:hover {
+    box-shadow: 0px 0px 4px #b1b1b1;
+    background: linear-gradient(0deg, #CC360C, #DB3A0D);
+    border: 1px solid #B3320E;
+}
+
+.compose-btn:active {
+    box-shadow: 0px 0px 4px #b1b1b1 inset;
+    background: linear-gradient(0deg, #CC360C, #DB3A0D);
+    border: 1px solid #B3320E;
+}
+
+.data-container h2 {
+    padding-left: 30px;
+}
+
+.data-container nav span {
+    font-weight: bold;
+    padding-left: 30px;
+    color: rgba(59, 59, 59, 0.884)
+}
+
+.data-body {
+    margin-top: 40px;
+    border-top: solid gray 0.5px;
+    padding: 30px;
 }

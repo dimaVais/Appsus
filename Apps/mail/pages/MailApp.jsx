@@ -1,21 +1,21 @@
+const Router = ReactRouterDOM.HashRouter
+const { Route, Switch } = ReactRouterDOM
 import 'assets/css/mail-style.css'
 import { SideMenu } from '../cmps/SideMenu.jsx'
-import { MailList } from '../cmps/MailList.jsx'
+import { MailList } from 'MailList.jsx'
 import { mailService } from '../services/mail-service.js'
 import { Modal } from '../../../../general-cmps/Modal.jsx'
 import { NewMail } from '../cmps/NewMail.jsx'
+import { MailData } from 'MailData.jsx'
 
 export class MailApp extends React.Component {
 
 
     state = {
         mails: [],
-        isModalShown: false
-    }
-
-
-    componentDidMount() {
-        this.loadMails();
+        isModalShown: false,
+        openMail: null,
+        ismailClicked: false
     }
 
     loadMails = () => {
@@ -28,8 +28,8 @@ export class MailApp extends React.Component {
         this.loadMails();
     }
 
+  
     onOpenModal = () => {
-        console.log('New Mail!!');
         this.setState({ isModalShown: !this.state.isModalShown });
     }
 
@@ -42,10 +42,13 @@ export class MailApp extends React.Component {
                 </h2>
                 <div className="mailapp-container flex-row">
                     <SideMenu onOpenModal={this.onOpenModal} />
-                    <MailList mails={this.state.mails} loadMails={this.loadMails}/>
+                    <Switch>
+                            <Route component={ MailData } exact path="/mail/list/:id" /> 
+                        <Route component={ MailList } path="/mail/list" /> 
+                    </Switch>
                 </div>
-                <Modal isShown={this.state.isModalShown} />
-                <NewMail onAddNewMail={this.onAddNewMail} />
+                <Modal isShown={this.state.isModalShown} toggleModal={this.onOpenModal}
+                    children={<NewMail onAddNewMail={this.onAddNewMail} toggleModal={this.onOpenModal} />} />
             </section>
         )
     }
