@@ -1,24 +1,25 @@
-export function NoteTodos({ onRemove, note, onSetBackgroundColor }) {
+export function NoteTodos({ onRemove, note, onSetPinnedNote, onSetBackgroundColor }) {
 
     function isDone(doneAt) {
         return (doneAt) ? '' : 'done'
     }
 
+
     return (
         <section>
             <div className={`note-todos-box bgc-${note.backgroundColor}`}>
-                {note.info.label && <h3>{note.info.label}</h3>}
                 <div className="notes-todos-list">
-                <ul>
-                    {note.info.todos.map(todo => <li className={isDone(todo.doneAt)} key={todo.id}>{todo.txt}</li>)}
-                </ul>
+                    <ul>
+                        {note.info.todos.map(todo => <li className={isDone(todo.doneAt)} key={todo.id}>{todo.text}</li>)}
+                    </ul>
                 </div>
                 <div className="note-todos-btns-box">
-                    <button onClick={() => { onRemove(note.id) }}>remove</button>
-                    <button onClick={() => { onSetBackgroundColor(note, 'red') }} >red</button>
-                    <button onClick={() => { onSetBackgroundColor(note, 'blue') }} >blue</button>
-                    <button onClick={() => { onSetBackgroundColor(note, 'green') }} >green</button>
-                    <button onClick={() => { onSetBackgroundColor(note, 'purple') }} >purple</button>
+                    <i onClick={() => onSetPinnedNote(note)} className="fas fa-thumbtack fa-2x pin-btn"></i>
+                    <i className="fas fa-trash fa-2x remove-btn" onClick={() => { onRemove(note.id) }}></i>
+                    <i onClick={() => { onSetBackgroundColor(note, 'red') }} className="fas fa-circle fa-2x red-circle color-btn"></i>
+                    <i onClick={() => { onSetBackgroundColor(note, 'blue') }} className="fas fa-circle fa-2x blue-circle color-btn"></i>
+                    <i onClick={() => { onSetBackgroundColor(note, 'green') }} className="fas fa-circle fa-2x green-circle color-btn" ></i>
+                    <i onClick={() => { onSetBackgroundColor(note, 'purple') }} className="fas fa-circle fa-2x purple-circle color-btn"></i>
                 </div>
             </div>
         </section>

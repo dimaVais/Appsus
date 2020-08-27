@@ -9,6 +9,12 @@ button {
     flex-wrap: wrap;
 }
 
+textarea {
+    resize: none;
+    font-family: 'Roboto', sans-serif;
+
+}
+
 
 /* Todos */
 
@@ -40,7 +46,9 @@ button {
     background-color: rgb(255, 255, 255);
     border: 1px solid #3b5998;
     flex-grow: 1;
-    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
 }
 
 /* images */
@@ -74,8 +82,10 @@ button {
 .note-img-btns-box {
     background-color: rgb(255, 255, 255);
     border: 1px solid #3b5998;
-    flex-grow: 2;
-    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
 }
 
 /* Video */
@@ -116,20 +126,37 @@ button {
 }
 
 .note-txt-value {
-    flex-grow: 1;
+    flex-grow: 8;
     padding: 10px;
     background-color: transparent;
     border: none;
     color: whitesmoke;
-    max-width: 100%;
-    height: 60%;
     
+}
+
+.note-txt-value-txtarea {
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    color: whitesmoke;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+
 }
 
 .note-txt-value:active {
 outline: none;
 }
 .note-txt-value:focus {
+outline: none;
+}
+
+.note-txt-value-txtarea:active {
+outline: none;
+}
+.note-txt-value-txtarea:focus {
 outline: none;
 }
 
@@ -157,17 +184,97 @@ outline: none;
 
 /* Buttons */
 
-.add-note-btn {
-    margin: 5px;
-    cursor: pointer;
-    color: #3b5998;
-}
-
 .note-btns-box {
     background-color: rgb(255, 255, 255);
     border: 1px solid #3b5998;
     flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
 }
+
+.remove-btn {
+    cursor: pointer;
+    color: #3b5998;
+    opacity: 0.5;
+}
+
+.remove-btn:hover {
+    opacity: 1;
+
+    animation: shake 0.5s;
+  
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  .pin-btn {
+    cursor: pointer;
+    color: #3b5998;
+    opacity: 0.5;
+  }
+
+  .pin-btn:hover {
+    opacity: 1;
+
+    animation: shake 0.5s;
+  
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+.color-btn {
+    cursor: pointer;
+    margin: 2px;
+    transition: 0.4s ease-in-out;
+}
+
+.color-btn:hover {
+    transform: scale(1.2) ;
+
+    animation: glow 0.3s;
+
+    
+
+}
+
+@keyframes glow {
+    0% {opacity: 1;}
+    25% {opacity: 0.5;}
+    50% {opacity: 1;}
+    75% {opacity: 0.5;}
+    100%{opacity: 1;}
+}
+
+.add-note-btn {
+    margin: 5px;
+    cursor: pointer;
+    color: #3b5998;
+
+}
+
+
+
 
 .bgc-red {
     background-color: tomato;
@@ -184,6 +291,21 @@ outline: none;
 .bgc-purple {
     background-color: rebeccapurple;
 }
+
+.red-circle {
+    color: tomato;
+}
+.blue-circle {
+    color: #3b5998;
+}
+.green-circle {
+    color: springgreen;
+}
+.purple-circle {
+    color: rebeccapurple;
+}
+
+
 
 .done {
     text-decoration: line-through;

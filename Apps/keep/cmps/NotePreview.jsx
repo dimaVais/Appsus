@@ -4,20 +4,20 @@ import {NoteVideo} from 'NoteVideo.jsx'
 import {NoteTodos} from 'NoteTodos.jsx'
 
 
-export function NotePreview({note, onRemove, onSetBackgroundColor}) {
+export function NotePreview({note, onRemove, onSetPinnedNote, onSetBackgroundColor}) {
 
 
     switch (note.type) {
         case 'NoteText':
-            return <NoteTxt onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
+            return <NoteTxt onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
         case 'NoteImg':
-            return <NoteImg onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
+            return <NoteImg onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
         case 'NoteVideo':
-            return <NoteVideo  onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
+            return <NoteVideo  onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
         case 'NoteTodos':
-            return <NoteTodos  onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
+            return <NoteTodos  onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
         default:
-            return<NoteTxt onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
+            return<NoteTxt onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
     }
 
 }
