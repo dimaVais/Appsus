@@ -1,7 +1,8 @@
-import { NoteTxt } from 'NoteTxt.jsx'
+// import { NoteTxt } from 'NoteTxt.jsx'
 import { KeepService } from '../services/keep-service.js'
 
 import '../../../general-assets/general-css/helpers.css'
+import { NotePreview } from './NotePreview.jsx'
 
 export function KeepList(props) {
 
@@ -10,9 +11,9 @@ export function KeepList(props) {
     }
 
     function onSetBackgroundColor(note, color){
-        console.log(note, color)
-        KeepService.setBackGroundColor(note, color)
+        KeepService.setBackGroundColor(note, color).then(props.loadNotes())
     }
+
 
 
     const { notes } = props
@@ -20,8 +21,10 @@ export function KeepList(props) {
     return (
         <div className="notes-list-box">
             <ul className="notes-list-itmes">
+             
                 {notes.map(note =>
-                    <li key={note.id}><NoteTxt note={note} onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor}  /></li>
+                    
+                    <li key={note.id}><NotePreview note={note} onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor}  /></li>
                 )}
             </ul>
 
