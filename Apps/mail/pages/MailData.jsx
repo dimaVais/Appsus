@@ -52,7 +52,7 @@ export class MailData extends React.Component {
                     </nav>
                 </div>
                 <div>
-                    <div className="data-body">{this.state.body}</div>
+                    <p className="data-body">{this.state.body}</p>
                 </div>
 
             </div>

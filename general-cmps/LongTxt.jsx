@@ -14,7 +14,7 @@ export class LongTxt extends React.Component {
         const limit = this.props.limit;
         const txt = this.props.text;
         const { isShowAll } = this.state;
-        const toShow = txt.substring(0, limit) + "...";
+        const toShow = txt.substring(0, limit);
         return (
             <section>
                 {txt.length <= limit && txt}

@@ -40,14 +40,16 @@ function addMail(mailData) {
         isRead: false,
         sentAt: new Date(Date.now()).toLocaleString()
     })
+    storageServie.saveToStorage(MAIL_KEY, mails);
+    eventBusFunction();
 
-    storageServie.saveToStorage(MAIL_KEY, mails)
 }
 
 function removeMail(id) {
     const idxToDelete = mails.findIndex(mail => mail.id === id);
     mails.splice(idxToDelete, 1);
     storageServie.saveToStorage(MAIL_KEY, mails);
+    eventBusFunction();
 }
 
 
@@ -55,18 +57,11 @@ function updateMailIsRead(id) {
     mails = mails.map(mail => {
         if (mail.id === id && !mail.isRead) {
             mail.isRead = true;
-            eventBus.emit('changeMailRead', {
-                msg:
-                {
-                    read: getReadAndUnreadCount().read,
-                    unRead: getReadAndUnreadCount().unRead,
-                    total: mails.length
-                },
-                type: 'success'
-            })
+
         }
         return mail
     });
+    eventBusFunction();
     storageServie.saveToStorage(MAIL_KEY, mails);
 }
 
@@ -75,18 +70,10 @@ function updateMailNotIsRead(id) {
     mails = mails.map(mail => {
         if (mail.id === id && mail.isRead) {
             mail.isRead = false;
-            eventBus.emit('changeMailRead', {
-                msg:
-                {
-                    read: getReadAndUnreadCount().read,
-                    unRead: getReadAndUnreadCount().unRead,
-                    total: mails.length
-                },
-                type: 'success'
-            })
         }
         return mail
     });
+    eventBusFunction();
     storageServie.saveToStorage(MAIL_KEY, mails);
 }
 
@@ -99,4 +86,16 @@ function getReadAndUnreadCount() {
     const readMials = mails.filter(mail => mail.isRead);
     const unReadMails = mails.filter(mail => !mail.isRead);
     return { read: readMials.length, unRead: unReadMails.length }
+}
+
+function eventBusFunction() {
+    eventBus.emit('changeMailRead', {
+        msg:
+        {
+            read: getReadAndUnreadCount().read,
+            unRead: getReadAndUnreadCount().unRead,
+            total: mails.length
+        },
+        type: 'success'
+    })
 }
