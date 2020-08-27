@@ -7,10 +7,10 @@ function _NavBar(props) {
         <nav>
 
             <div className="nav-bar-box">
-                <NavLink exact className="navLink" activeClassName='active-nav' to="/">Nav-Home</NavLink><span> | </span>
-                <NavLink className="navLink" activeClassName='active-nav' to="/Book">Nav-Books List</NavLink><span> | </span>
-                <NavLink className="navLink" activeClassName='active-nav' to="/keep">Nav-Keep</NavLink>
-                <NavLink className="navLink" activeClassName='active-nav' to="/mail/list">Nav-Mail</NavLink>
+                <NavLink exact className="navLink" activeClassName='active-nav' to="/"><img className="nav-bar-home-img" src="../general-assets/img/home2.png" alt="home"/></NavLink>
+                <NavLink className="navLink" activeClassName='active-nav' to="/mail/list"><img className="nav-bar-mail-img" src="../general-assets/img/mail3.jpg" alt="mail"/></NavLink>
+                <NavLink className="navLink" activeClassName='active-nav' to="/keep">MissKeep</NavLink>
+                <NavLink className="navLink" activeClassName='active-nav' to="/Book">MissBooks</NavLink>
             </div>
         </nav>
     )

@@ -38,25 +38,6 @@ export class KeepApp extends React.Component {
         return this.state.notes.filter(note => note.info.txt.toLowerCase().includes(this.state.filterBy.toLowerCase()))
     }
 
-    onAddTextNote = (ev) => {
-        ev.preventDefault()
-        KeepService.addTextNote(this.state.txtValue)
-            .then(res => this.setState({ notes: res }))
-
-    }
-    onAddImgNote = (ev) => {
-        ev.preventDefault()
-        KeepService.addImgNote(this.state.txtValue)
-            .then(res => this.setState({ notes: res }))
-
-    }
-    onAddVideoNote = (ev) => {
-        ev.preventDefault()
-        KeepService.addVideoNote(this.state.txtValue)
-            .then(res => this.setState({ notes: res }))
-
-    }
-
     onInputChange = (ev) => {
         ev.preventDefault()
         this.setState({ txtValue: ev.target.value })
@@ -69,19 +50,22 @@ export class KeepApp extends React.Component {
                 this.setState({ selectedType: type, placeholder: 'What Needs to Be Done?' });
                 break;
             case 'image':
-                console.log(type);
-                this.setState({ selectedType: type, placeholder: 'Insert an image URL and click on the camera' });
+                this.setState({ selectedType: type, placeholder: 'Insert an image URL' });
                 break;
             case 'video':
-                this.setState({ selectedType: type, placeholder: 'Insert a YouTube URL and click on the video camera' });
+                this.setState({ selectedType: type, placeholder: 'Insert a YouTube URL' });
                 break;
             case 'todos':
-                this.setState({ selectedType: type, placeholder: 'Make a list of tasks' });
+                this.setState({ selectedType: type, placeholder: 'Separate tasks with a comma' });
                 break;
             default:
                 this.setState({ selectedType: type, placeholder: 'What Needs to Be Done?' });
                 break;
         }
+    }
+
+    onKeyPressed = (ev) => {
+        if (ev.keyCode === 13) this.onAddNote(ev)
     }
 
     onAddNote = (ev) => {
@@ -100,8 +84,7 @@ export class KeepApp extends React.Component {
                 {<NoteFilter onFilter={this.setFilter} filterBy={this.state.filterBy} />}
                 <div className="note-input-box">
                     <form>
-                        <input className="note-input" placeholder={this.state.placeholder} type="text" value={this.state.txtValue} onChange={this.onInputChange} />
-                        
+                        <input className="note-input" onKeyDown={this.onKeyPressed}  placeholder={this.state.placeholder} type="text" value={this.state.txtValue} onChange={this.onInputChange} />
                         <i onClick={this.onAddNote} className="far fa-plus-square fa-2x add-note-btn"></i>
                         <i onClick={() => this.onSelectType('text')} className="fas fa-comment-dots fa-2x add-note-btn"></i>
                         <i onClick={() => this.onSelectType('image')} className="fas fa-camera-retro fa-2x add-note-btn"></i>

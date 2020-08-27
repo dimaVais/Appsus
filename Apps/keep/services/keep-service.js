@@ -7,7 +7,9 @@ export const KeepService = {
     addVideoNote,
     removeNote,
     setBackGroundColor,
-    addNote
+    addNote,
+    setPinnedNote,
+    addTodoNote
 
 }
 
@@ -23,30 +25,28 @@ function getNoteById(noteId) {
 
 function removeNote(noteId) {
     notes = notes.filter(note => note.id !== noteId)
-    console.log('inservice', notes);
     return Promise.resolve(notes);
 }
 
 function addNote(txt, type) {
-    
-        switch (type) {
-            case 'text':
-                 return addTextNote(txt)
-            case 'image':
-                return  addImgNote(txt)
-            case 'video':
-                 return addVideoNote(txt)
-            case 'todos':
-                
-                break;
-            default:
-              return  addTextNote(txt)
-        }
-    
+
+    switch (type) {
+        case 'text':
+            return addTextNote(txt)
+        case 'image':
+            return addImgNote(txt)
+        case 'video':
+            return addVideoNote(txt)
+        case 'todos':
+            return addTodoNote(txt)
+            break;
+        default:
+            return addTextNote(txt)
+    }
+
 }
 
 function addTextNote(txt) {
-    console.log('addTextNote', txt);
     const note = {
         id: makeId(),
         type: "NoteText",
@@ -98,13 +98,37 @@ function addVideoNote(text) {
 
 }
 
-// function addTodoNote(text) {
+function addTodoNote(txt) {
+    const tasks = txt.split(',')
+    let todos = tasks.map((task) =>
+        ({
+            id: makeId(),
+            text: task,
+            doneAt: new Date()
+        }));
+    let newNote = {
+        id: makeId(),
+        isPinned: true,
+        type: "NoteTodos",
+        backgroundColor: '#3b5998',
+        info: {
+            txt: "TEST 123:",
+            todos: todos
+        }
+    }
+    notes.push(newNote);
+    return Promise.resolve(notes);
 
-// }
+}
+
+
+function setPinnedNote(note) {
+    note.isPinned = !note.isPinned
+    return Promise.resolve(notes);
+}
 
 function setBackGroundColor(note, color) {
     note.backgroundColor = color
-    console.log('note in service:', note)
     return Promise.resolve(notes);
 }
 
@@ -112,7 +136,7 @@ function setBackGroundColor(note, color) {
 var notes = [{
         id: makeId(),
         type: "NoteText",
-        isPinned: true,
+        isPinned: false,
         backgroundColor: '#3b5998',
         info: {
             txt: "Fullstack Me Baby!"
@@ -121,7 +145,7 @@ var notes = [{
     {
         id: makeId(),
         type: "NoteText",
-        isPinned: true,
+        isPinned: false,
         backgroundColor: '#3b5998',
         info: {
             txt: "Buy eggs for dinner to make eggs salad"
@@ -139,7 +163,7 @@ var notes = [{
     {
         id: makeId(),
         type: "NoteImg",
-        isPinned: true,
+        isPinned: false,
         info: {
             url: "https://thesportsrush.com/wp-content/uploads/2020/07/Kobe-bryant-and-shaq-o-neal.jpg",
             txt: "Shaq and Kobe💔"
@@ -150,23 +174,30 @@ var notes = [{
     {
         id: makeId(),
         type: "NoteText",
-        isPinned: true,
+        isPinned: false,
         backgroundColor: '#3b5998',
         info: {
             txt: "Buy Amazon stock when it drops to $1500"
         }
     },
     {
-        
+
         id: makeId(),
         type: "NoteTodos",
         isPinned: true,
         backgroundColor: '#3b5998',
         info: {
             txt: "How was it:",
-            todos: [
-                { id: makeId(), text: "Do that", doneAt: null },
-                { id: makeId(), text: "Do this", doneAt: 187111111 }
+            todos: [{
+                    id: makeId(),
+                    text: "Do that",
+                    doneAt: null
+                },
+                {
+                    id: makeId(),
+                    text: "Do this",
+                    doneAt: 187111111
+                }
             ]
         }
     },

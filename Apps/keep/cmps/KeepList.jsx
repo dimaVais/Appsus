@@ -10,26 +10,51 @@ export function KeepList(props) {
         KeepService.removeNote(noteId).then(props.loadNotes())
     }
 
-    function onSetBackgroundColor(note, color){
+    function onSetBackgroundColor(note, color) {
         KeepService.setBackGroundColor(note, color).then(props.loadNotes())
+    }
+
+    function onSetPinnedNote(note) {
+        KeepService.setPinnedNote(note).then(props.loadNotes())
+
     }
 
 
 
     const { notes } = props
+    const pinnedNotes = notes.filter((note) => note.isPinned);
+    const normalNotes = notes.filter((note) => !note.isPinned);
 
     return (
         <div className="notes-list-box">
             <ul className="notes-list-itmes">
-             
-                {notes.map(note =>
-                    
-                    <li key={note.id}><NotePreview note={note} onRemove={onRemove} onSetBackgroundColor={onSetBackgroundColor}  /></li>
-                )}
+                {pinnedNotes.map((pinnedNote) => {
+                return (
+                <li key={pinnedNote.id}>
+                    <NotePreview 
+                    note={pinnedNote} 
+                    onSetPinnedNote={onSetPinnedNote}
+                    onRemove={onRemove} 
+                    onSetBackgroundColor={onSetBackgroundColor} />
+                </li>
+                )})}
             </ul>
-
+            <hr/>
+            <ul className="notes-list-itmes">
+                {normalNotes.map((note) => {
+                return (
+                <li key={note.id}>
+                    <NotePreview 
+                    note={note} 
+                    onSetPinnedNote={onSetPinnedNote}
+                    onRemove={onRemove} 
+                    onSetBackgroundColor={onSetBackgroundColor} />
+                </li>
+                )})}
+            </ul>
         </div>
     )
 
 }
+
 
