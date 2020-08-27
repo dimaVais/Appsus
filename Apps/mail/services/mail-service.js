@@ -1,5 +1,6 @@
 import { utilService } from '../../../../services/utils-service.js'
 import { storageServie } from '../../../../services/storage-service.js'
+import { eventBus } from '../../../../services/event-bus-service.js'
 
 
 export const mailService = {
@@ -8,7 +9,8 @@ export const mailService = {
     removeMail,
     updateMailIsRead,
     updateMailNotIsRead,
-    getMailById
+    getMailById,
+    getReadAndUnreadCount
 }
 
 const MAIL_KEY = 'MAILS';
@@ -51,15 +53,38 @@ function removeMail(id) {
 
 function updateMailIsRead(id) {
     mails = mails.map(mail => {
-        if (mail.id === id && !mail.isRead) mail.isRead = true;
+        if (mail.id === id && !mail.isRead) {
+            mail.isRead = true;
+            eventBus.emit('changeMailRead', {
+                msg:
+                {
+                    read: getReadAndUnreadCount().read,
+                    unRead: getReadAndUnreadCount().unRead,
+                    total: mails.length
+                },
+                type: 'success'
+            })
+        }
         return mail
     });
     storageServie.saveToStorage(MAIL_KEY, mails);
 }
 
+
 function updateMailNotIsRead(id) {
     mails = mails.map(mail => {
-        if (mail.id === id && mail.isRead) mail.isRead = false;
+        if (mail.id === id && mail.isRead) {
+            mail.isRead = false;
+            eventBus.emit('changeMailRead', {
+                msg:
+                {
+                    read: getReadAndUnreadCount().read,
+                    unRead: getReadAndUnreadCount().unRead,
+                    total: mails.length
+                },
+                type: 'success'
+            })
+        }
         return mail
     });
     storageServie.saveToStorage(MAIL_KEY, mails);
@@ -68,4 +93,10 @@ function updateMailNotIsRead(id) {
 function getMailById(id) {
     const mail = mails.find(mail => mail.id === id);
     return Promise.resolve(mail);
+}
+
+function getReadAndUnreadCount() {
+    const readMials = mails.filter(mail => mail.isRead);
+    const unReadMails = mails.filter(mail => !mail.isRead);
+    return { read: readMials.length, unRead: unReadMails.length }
 }

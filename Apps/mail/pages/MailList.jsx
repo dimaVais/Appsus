@@ -23,6 +23,7 @@ export class MailList extends React.Component {
     render() {
         return (
             <div className="inner-page-container">
+               
                 <ul className="mail-list">
                     {this.state.mails.map(mail => {
                         return <li key={mail.id} className="mail-item ">

@@ -13,5 +13,7 @@ function emit(eventName, data) {
     window.dispatchEvent(new CustomEvent(eventName, { detail: data }));
 }
 
+export const eventBus = { on, emit }
 
-export default { on, emit }
+
+

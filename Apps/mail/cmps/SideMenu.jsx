@@ -3,6 +3,7 @@ import { Compose } from './Compose.jsx'
 import { Inbox } from './Inbox.jsx'
 import { Stared } from './Stared.jsx'
 import { Sent } from './Sent.jsx'
+import { MailStatus } from 'MailStatus.jsx'
 
 export class SideMenu extends React.Component {
 
@@ -21,7 +22,7 @@ export class SideMenu extends React.Component {
                     <Stared />
                     <Sent />
                 </div>
-
+                <MailStatus />
             </div>
         )
     }
