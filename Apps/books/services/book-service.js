@@ -13,9 +13,11 @@ export const bookService = {
     addBook
 }
 
+const BOOK_KEY = 'BOOKS';
 var currSearch = 'effective%20javascript'
 var books = [];
 var booksFound;
+
 
 
 function _getBooks() {
@@ -86,18 +88,21 @@ function getBookById(id) {
 
 function addBook(book){
     books.unshift(book)
+    storageServie.saveToStorage(BOOK_KEY, mails);
+
 }
 
 function addReviwe(reviwe, bookToSave) {
-
     bookToSave.reviwes.push(reviwe);
     books = books.map(book => (book.id === bookToSave.id) ? bookToSave : book);
+    storageServie.saveToStorage(BOOK_KEY, mails);
     return Promise.resolve(bookToSave);
 }
 
 function deleteReviwe(book, name) {
     const revDeleteIdx = book.reviwes.findIndex(rev => rev.name === name);
     book.reviwes.splice(revDeleteIdx, 1);
+    storageServie.saveToStorage(BOOK_KEY, mails);
     return book;
 }
 
