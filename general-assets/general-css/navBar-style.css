@@ -1,29 +1,67 @@
-.active-nav {
-    color: firebrick;
-}
-
-.nav-bar-box {
-    background-color: #3b5998;
-    padding: 20px;
-    margin: 0;
+.main-nav {
+    background-color: white;
     display: flex;
+    top: 0;
+    right: 20px;
+    transform: translateX(120%);
+    transition: transform .8s;
+    
 
 }
+
+.main-nav:last-child {
+    margin-right: 50px;
+}
+
+header.menu-open .main-nav {
+    transform: translateX(0);
+}
+
+/* .main-nav {
+    flex-direction: column;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background: rgb(255 255 255 / 90%);
+    box-shadow: -8px 0px 20px rgb(0 0 0 / 10%);
+    transform: translateX(100%);
+    border-left: solid 1px #ccc;
+
+    transition: transform .8s, box-shadow .8s;
+} */
+
+
 
 .navLink {
-    color:whitesmoke;
+    color: whitesmoke;
     text-decoration: none;
-    margin: 10px;
+    margin: 15px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .nav-bar-home-img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: transparent;
 }
+
 .nav-bar-mail-img {
-    width: 40px;
-    height: 40px;
+    padding-top: 4px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+.nav-bar-keep-img {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+.nav-bar-book-img {
+    width: 35px;
+    height: 35px;
     background-color: transparent;
 }

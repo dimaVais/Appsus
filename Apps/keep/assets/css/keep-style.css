@@ -161,7 +161,7 @@ outline: none;
 }
 
 .note-input-box {
-    width: 550px;
+    width: 600px;
     margin: 20px auto;
     background-color: white;
     border: 1px solid #3b5998;
@@ -267,10 +267,13 @@ outline: none;
 }
 
 .add-note-btn {
-    margin: 5px;
+    margin: 10px;
     cursor: pointer;
     color: #3b5998;
+}
 
+.add-note-btn:hover {
+    color: rgba(80, 78, 78, 0.726)
 }
 
 
@@ -281,7 +284,7 @@ outline: none;
 }
 
 .bgc-green {
-    background-color: springgreen;
+    background-color: rgb(68, 206, 142);
 }
 
 .bgc-blue {
@@ -299,7 +302,7 @@ outline: none;
     color: #3b5998;
 }
 .green-circle {
-    color: springgreen;
+    color: rgb(68, 206, 142);
 }
 .purple-circle {
     color: rebeccapurple;

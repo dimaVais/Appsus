@@ -83,7 +83,7 @@ export class KeepApp extends React.Component {
             <section className="keep-main-container">
                 {<NoteFilter onFilter={this.setFilter} filterBy={this.state.filterBy} />}
                 <div className="note-input-box">
-                    <form>
+                    <form className="form-box">
                         <input className="note-input" onKeyDown={this.onKeyPressed}  placeholder={this.state.placeholder} type="text" value={this.state.txtValue} onChange={this.onInputChange} />
                         <i onClick={this.onAddNote} className="far fa-plus-square fa-2x add-note-btn"></i>
                         <i onClick={() => this.onSelectType('text')} className="fas fa-comment-dots fa-2x add-note-btn"></i>
