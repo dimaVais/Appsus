@@ -6,7 +6,7 @@ export function Inbox(props) {
 
     return (
         <Link className="mail-link flex-col" to={`/mail/list`}>
-            <button calssName='inbox-btn side-btn'> Inbox</button>
+            <button className='inbox-btn side-btn'> Inbox</button>
         </Link>
     )
 }
