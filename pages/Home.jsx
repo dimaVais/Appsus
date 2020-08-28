@@ -24,7 +24,7 @@ export class Home extends React.Component {
                 <Link to={'/keep'}>   <img className="home-img-keep" src="../general-assets/img/home-note2.jpg" alt=""/></Link>
                 </div>
                 <div className="home-img-book-box">
-                <Link to={'/book'}> <img className="home-img-book" src="../general-assets/img/home-book2.png" alt=""/></Link>
+                <Link to={'/book'}> <img className="home-img-book" src="../general-assets/img/home-book.png" alt=""/></Link>
                 </div>
                 </div>
             </section>
