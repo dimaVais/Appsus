@@ -5,8 +5,20 @@ export class NewMail extends React.Component {
             from: '',
             subject: '',
             txt: ''
+        },
+        isUpdate: false
+
+    }
+
+    componentDidUpdate() {
+        if (this.state.isUpdate) return;
+        if (this.props.subject) {
+            this.setState({ mail:
+                {from: 'Me', subject: 'Re:' + this.props.subject, 
+                txt: "\n _________________________________________\n"+ this.props.body }})
         }
 
+        this.setState({ isUpdate: true })
     }
 
     onInputChange = (ev) => {
@@ -27,18 +39,17 @@ export class NewMail extends React.Component {
                 <div><h3>Compose your Mail: </h3>  <button >Send</button></div>
                 <div className="flex-row ">
                     <label htmlFor="from" >From:</label>
-                    <input type="text" name="from" className="input-from"
+                    <input type="text" value={this.state.mail.from} name="from" className="input-from"
                         placeholder="From:" onChange={this.onInputChange} />
                 </div>
                 <div className="flex-row">
                     <label htmlFor="subject" >Subject:</label>
-                    <input type="text" name="subject" className="input-subject"
+                    <input type="text" name="subject" value={this.state.mail.subject} className="input-subject"
                         placeholder="subject:" onChange={this.onInputChange} />
                 </div>
                 <label htmlFor="txt"></label>
-                <textarea type="textarea" placeholder="Write mail here" name="txt" rows="8" cols="50"
+                <textarea type="textarea" value={this.state.mail.txt} placeholder="Write mail here" name="txt" rows="8" cols="50"
                     onChange={this.onInputChange} />
-
             </form>
 
         )

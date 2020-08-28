@@ -28,7 +28,6 @@ export class MailApp extends React.Component {
         this.loadMails();
     }
 
-  
     onOpenModal = () => {
         this.setState({ isModalShown: !this.state.isModalShown });
     }
