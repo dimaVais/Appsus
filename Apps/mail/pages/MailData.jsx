@@ -17,7 +17,8 @@ export class MailData extends React.Component {
         subject: '',
         from: '',
         sentAt: '',
-        body: ''
+        body: '',
+        isModalShown: false
     }
 
     componentDidMount() {
@@ -28,11 +29,22 @@ export class MailData extends React.Component {
                 subject: mail.subject,
                 from: mail.from,
                 sentAt: mail.sentAt,
-                body: mail.body,
+                body: mail.body
+
             }))
     }
 
+    onReplyToMail = (mail) => {
+        mailService.addMail(mail);
+    }
+
+    onOpenModal = () => {
+        this.setState({ isModalShown: !this.state.isModalShown });
+    }
+
+
     render() {
+        console.log(this.state.subject, this.state.body);
         return (
             <div className="inner-page-container data-container flex-col">
                 <h2>{this.state.subject}</h2>
@@ -43,6 +55,7 @@ export class MailData extends React.Component {
                             <span>  Date: {this.state.sentAt}</span>
                         </div>
                         <div class="btn-data-menu">
+                            <button onClick={this.onOpenModal}><i class="fas fa-reply"></i></button>
                             <UnReadMailBtn mailId={this.state.id} />
                             <Link to={`/mail/list/`}>
                                 <DeleteMailBtn mailId={this.state.id} />
@@ -54,6 +67,10 @@ export class MailData extends React.Component {
                 <div>
                     <p className="data-body">{this.state.body}</p>
                 </div>
+
+                <Modal isShown={this.state.isModalShown} toggleModal={this.onOpenModal}
+                    children={<NewMail onAddNewMail={this.onReplyToMail} toggleModal={this.onOpenModal} 
+                    subject={this.state.subject} body={this.state.body}/>} />
 
             </div>
 
