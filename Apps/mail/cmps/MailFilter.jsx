@@ -1,21 +1,10 @@
-export class MailFilter extends React.Component {
-    state = {
-        filterBy: ''
-    }
-    // componentDidMount() {
-    //     const filterBy = new URLSearchParams(this.props.location.search).get('filterBy') || ''
-    //     this.setState({ filterBy }, () => this.props.onFilter(this.state.filterBy))
-    // }
+export function MailFilter(props) {
 
-    handleChange = ({ target }) => {
-        this.setState({ filterBy: target.value }, () => this.props.onFilter(this.state.filterBy))
-    }
-
-    render() {
-        return <section className="mail-filter">
-            <h3>Search Mails</h3>
-            <input value={ this.state.filterBy } type="text" placeholder="Search by Name or body"
-                onChange={ this.handleChange } />
-        </section >
-    }
+    return (
+        <div className="mail-filter">
+            <h4>Search Mails:</h4>
+            <input className="upper-bar mail-search" type="text" placeholder="Subject, Body or From"
+                onChange={(ev) => props.onFilter(ev.target.value)} />
+        </div >
+    )
 }
