@@ -54,8 +54,8 @@ export class MailData extends React.Component {
                             <span>  From: {this.state.from}</span>
                             <span>  Date: {this.state.sentAt}</span>
                         </div>
-                        <div class="btn-data-menu">
-                            <button onClick={this.onOpenModal}><i class="fas fa-reply"></i></button>
+                        <div className="btn-data-menu">
+                            <button className="mail-reply" onClick={this.onOpenModal}><i class="fas fa-reply"></i></button>
                             <UnReadMailBtn mailId={this.state.id} />
                             <Link to={`/mail/list/`}>
                                 <DeleteMailBtn mailId={this.state.id} />
@@ -64,13 +64,16 @@ export class MailData extends React.Component {
 
                     </nav>
                 </div>
-                <div>
-                    <p className="data-body">{this.state.body}</p>
+                <div className={"mail-content"}>
+                    <p className="data-body" > {this.state.body.split("\n").map((txt, i) => {
+                        return <p key={i}>{txt}</p>
+                    })}
+                    </p>
                 </div>
 
                 <Modal isShown={this.state.isModalShown} toggleModal={this.onOpenModal}
-                    children={<NewMail onAddNewMail={this.onReplyToMail} toggleModal={this.onOpenModal} 
-                    subject={this.state.subject} body={this.state.body}/>} />
+                    children={<NewMail onAddNewMail={this.onReplyToMail} toggleModal={this.onOpenModal}
+                        subject={this.state.subject} body={this.state.body} />} />
 
             </div>
 

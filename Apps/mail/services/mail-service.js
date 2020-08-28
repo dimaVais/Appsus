@@ -90,12 +90,7 @@ function getReadAndUnreadCount() {
 
 function eventBusFunction() {
     eventBus.emit('changeMailRead', {
-        msg:
-        {
-            read: getReadAndUnreadCount().read,
-            unRead: getReadAndUnreadCount().unRead,
-            total: mails.length
-        },
+        msg:'Mail Status changed',
         type: 'success'
     })
 }

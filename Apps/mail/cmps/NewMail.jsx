@@ -15,7 +15,7 @@ export class NewMail extends React.Component {
         if (this.props.subject) {
             this.setState({ mail:
                 {from: 'Me', subject: 'Re:' + this.props.subject, 
-                txt: "\n _________________________________________\n"+ this.props.body }})
+                txt: "\n _____________________________________________________\n"+ this.props.body }})
         }
 
         this.setState({ isUpdate: true })

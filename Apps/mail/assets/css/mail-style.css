@@ -4,14 +4,14 @@
 
 .main-side-container {
     width: 20%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #3b5998;
     border: solid grey 2px;
 }
 
 .inner-page-container {
     width: 80%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: whitesmoke;
     border: solid grey 2px;
 }
@@ -31,7 +31,7 @@
     border: solid rgb(172, 158, 158) 1px;
 }
 
-.msg-container div input{
+.msg-container div input {
     margin-left: 5px;
 }
 
@@ -52,8 +52,18 @@
     color: red;
 }
 
+.mail-reply:hover{
+    color: green;
+}
+
 .unread-mail {
     font-weight: bold;
+}
+
+.mail-content {
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .mail-from {
@@ -134,8 +144,9 @@
     margin-top: 40px;
     border-top: solid gray 0.5px;
     padding: 30px;
+    word-wrap: break-word; 
 }
 
-.msg-body-short{
+.msg-body-short {
     display: inline;
 }

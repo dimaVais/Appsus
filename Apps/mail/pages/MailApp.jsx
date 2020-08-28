@@ -7,6 +7,7 @@ import { mailService } from '../services/mail-service.js'
 import { Modal } from '../../../../general-cmps/Modal.jsx'
 import { NewMail } from '../cmps/NewMail.jsx'
 import { MailData } from 'MailData.jsx'
+import { MailFilter } from '../cmps/MailFilter.jsx'
 
 export class MailApp extends React.Component {
 
