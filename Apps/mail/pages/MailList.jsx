@@ -58,8 +58,8 @@ export class MailList extends React.Component {
     sortMails(mails) {
         const sortedMails = mails.sort((mail1, mail2) => {
             if (this.state.sortBy === 'sentAt') {
-                if (mail1[this.state.sortBy] > mail2[this.state.sortBy]) return 1
-                else if (mail1[this.state.sortBy] < mail2[this.state.sortBy]) return -1
+                if (mail1[this.state.sortBy] < mail2[this.state.sortBy]) return 1
+                else if (mail1[this.state.sortBy] > mail2[this.state.sortBy]) return -1
                 else return 0;
             } else {
                 if (mail1[this.state.sortBy].toLowerCase() > mail2[this.state.sortBy].toLowerCase()) return 1

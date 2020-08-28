@@ -1,5 +1,6 @@
 import { Home } from './pages/Home.jsx'
 import { BookApp } from 'Apps/books/pages/BookApp.jsx'
+import { BookDetails } from 'Apps/books/pages/BookDetails.jsx'
 import { KeepApp } from 'Apps/keep/pages/KeepApp.jsx'
 import { MailApp } from 'Apps//mail/pages/MailApp.jsx'
 import { NavBar } from 'general-cmps/NavBar.jsx'
@@ -31,6 +32,7 @@ export class App extends React.Component {
                     </header>
                     <main>
                         <Switch>
+                            <Route component={BookDetails} exact path="/book/:id" />
                             <Route component={BookApp} path="/book" />
                             <Route component={KeepApp} path="/keep" />
                             <Route component={MailApp} path="/mail/list" />
