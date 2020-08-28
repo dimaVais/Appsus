@@ -23,6 +23,11 @@ export class BookApp extends React.Component {
         this.setState({ filterBy })
     }
 
+    onRemoveBook = (bookId) => {
+        bookService.removeBook(bookId);
+        this.loadbooks();
+    }
+
     getbooksForDisplay = () => {
         if (this.state.filterBy) {
             const books = this.state.books.filter(book => book.title.includes(this.state.filterBy))
@@ -36,10 +41,12 @@ export class BookApp extends React.Component {
         const booksShow = this.getbooksForDisplay();
         return (
             <section className="book-app">
-                <BookFilter onFilter={this.setFilter} />
-                <AddBook loadbooks={this.loadbooks} />
+                <div className="flex-col align-center">
+                    <div className="flex-row"><span>Filter Book: </span> <BookFilter onFilter={this.setFilter} /></div>
+                     <AddBook loadbooks={this.loadbooks} />
+                </div>
                 <BookList onSelectBook={this.onSelectBook} books={booksShow}
-                    selectedBook={(this.state.selectedBook) ? this.state.selectedBook : null} />
+                    onRemoveBook={this.onRemoveBook} />
             </section>
         )
     }

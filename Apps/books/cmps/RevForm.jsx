@@ -23,7 +23,7 @@ export class RevForm extends React.Component {
         return (
 
             <form className="RateForm" onSubmit={ this.onAddReview }>
-                <h2>Tell us your opinion about the book</h2>
+                <h4>Tell us your opinion about the book</h4>
 
                 <label htmlFor="name" >What is Your full Name?</label>
                 <input type="text" name="name" className="reader" value={ this.state.reviwe.name }
@@ -42,7 +42,7 @@ export class RevForm extends React.Component {
                 <input type="date" name="date" className="date" onChange={ this.onInputChange } value={ this.state.reviwe.date } />
 
                 <label htmlFor="free-txt">Anything more you want to tell us?</label>
-                <textarea type="textarea" name="text" rows="4" cols="50" onChange={ this.onInputChange }
+                <textarea className="form-text" type="textarea" name="text" rows="4" cols="50" onChange={ this.onInputChange }
                     value={ this.state.reviwe.text } />
 
                 <button >SUBMIT</button>

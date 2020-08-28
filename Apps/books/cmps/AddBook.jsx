@@ -29,15 +29,15 @@ export class AddBook extends React.Component {
                 <h1>Choose A book to add to your list</h1>
                 <ul>
                     {this.state.books.map(book => {
-                        return <li className="add-book-item">{book.title} <button onClick={() =>{ this.onAddBook(book) }}>+</button> </li>
+                        return <li className="add-book-item">{book.title} <button onClick={() => { this.onAddBook(book) }}>+</button> </li>
                     })}
                 </ul>
             </div>
         }
         return (
-            <div>
+            <div className="add-book-container">
                 <form action="">
-                    <label htmlFor="bookName" className="add-mgs" >Add New Book To your List: </label>
+                    <span>Search In Our Collection Book: </span>
                     <input type="text" name="bookName" className="reader"
                         onChange={this.onSearchBooks} placeholder="Search Here" />
                 </form>

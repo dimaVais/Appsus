@@ -9,7 +9,7 @@ export function BookList(props) {
                 {
                     props.books.map(book =>
                         <li key={book.id}>
-                            <BookPreview book={book} onSelectBook={props.onSelectBook} />
+                            <BookPreview book={book} onRemoveBook={props.onRemoveBook} />
                         </li>
                     )
                 }

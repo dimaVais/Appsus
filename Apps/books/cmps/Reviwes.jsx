@@ -9,7 +9,7 @@ export function Reviwes(props) {
                     <li>rate: { rev.rate }</li>
                     <li>Book red on: { rev.date }</li>
                     <li>Reviwe comments: { rev.text }</li>
-                    <button onClick={ props.onDeleteBook }>X</button>
+                    <button onClick={ props.onRemoveRev }>X</button>
                 </ul>
 
             ) }

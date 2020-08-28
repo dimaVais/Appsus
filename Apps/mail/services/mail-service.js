@@ -1,5 +1,5 @@
 import { utilService } from '../../../../services/utils-service.js'
-import { storageServie } from '../../../../services/storage-service.js'
+import { storageService } from '../../../../services/storage-service.js'
 import { eventBus } from '../../../../services/event-bus-service.js'
 
 
@@ -25,7 +25,7 @@ var startMails = [
 
 ]
 
-var mails = storageServie.loadFromStorage(MAIL_KEY) || startMails;
+var mails = storageService.loadFromStorage(MAIL_KEY) || startMails;
 
 function query() {
     return Promise.resolve(mails);
@@ -40,7 +40,7 @@ function addMail(mailData) {
         isRead: false,
         sentAt: new Date(Date.now()).toLocaleString()
     })
-    storageServie.saveToStorage(MAIL_KEY, mails);
+    storageService.saveToStorage(MAIL_KEY, mails);
     eventBusFunction();
 
 }
@@ -48,7 +48,7 @@ function addMail(mailData) {
 function removeMail(id) {
     const idxToDelete = mails.findIndex(mail => mail.id === id);
     mails.splice(idxToDelete, 1);
-    storageServie.saveToStorage(MAIL_KEY, mails);
+    storageService.saveToStorage(MAIL_KEY, mails);
     eventBusFunction();
 }
 
@@ -62,7 +62,7 @@ function updateMailIsRead(id) {
         return mail
     });
     eventBusFunction();
-    storageServie.saveToStorage(MAIL_KEY, mails);
+    storageService.saveToStorage(MAIL_KEY, mails);
 }
 
 
@@ -74,7 +74,7 @@ function updateMailNotIsRead(id) {
         return mail
     });
     eventBusFunction();
-    storageServie.saveToStorage(MAIL_KEY, mails);
+    storageService.saveToStorage(MAIL_KEY, mails);
 }
 
 function getMailById(id) {
