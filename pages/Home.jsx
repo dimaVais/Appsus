@@ -12,13 +12,15 @@ export class Home extends React.Component {
     render() {
         return (
             <section>
-                <NavLink to="/mail/list">Mail</NavLink>
-                <NavLink to="/keep">Keep</NavLink>
-                <NavLink to="/book">Book</NavLink>
-
-                <h2 className="home-header">
-                 home  
-                </h2>
+                <div className="home-img-mail-box">
+                    
+                </div>
+                <div className="home-img-keep-box">
+                    
+                </div>
+                <div className="home-img-book-box">
+                    
+                </div>
             </section>
         )
     }
