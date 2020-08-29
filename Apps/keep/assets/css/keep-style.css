@@ -36,7 +36,7 @@ hr {
 .notes-list-itmes {
     display: flex;
     list-style-type: none;
-
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -198,8 +198,8 @@ outline: none;
 }
 
 .note-input-box {
-    width: 400px;
-    margin: 20px auto;
+    width: 450px;
+    margin: 5px auto;
     background-color: white;
     border: 1px solid #3b5998;
     border-radius: 7px;
@@ -220,7 +220,7 @@ outline: none;
 }
 
 .note-filter-box {
-    margin: 14px;
+    margin: 14px 0 0 14px;
 }
 
 .note-filter-input {
@@ -384,4 +384,120 @@ outline: none;
 
 .done {
     text-decoration: line-through;
+}
+
+@media (max-width: 870px) {
+    .note-input-box {
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 740px) {
+    .note-txt-box {
+        margin: 5px;
+        width: 350px;
+    }
+    .note-img-box {
+        margin: 5px;
+        width: 350px;
+    }
+    .note-video-box {
+        margin: 5px;
+        width: 350px;
+    }
+    .note-todos-box {
+        margin: 5px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 500px) {
+    .note-input-box {
+        width: 350px;
+        margin: 15px auto;
+    }
+
+    .note-filter-box {
+        margin: 14px 0 0 14px;
+    }
+    .note-txt-box {
+        margin: 5px;
+        width: 350px;
+    }
+    .note-img-box {
+        margin: 5px;
+        width: 350px;
+    }
+    .note-video-box {
+        margin: 5px;
+        width: 350px;
+    }
+    .note-todos-box {
+        margin: 5px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 420px) {
+    .note-input-box {
+        width: 320px;
+        margin: 15px auto;
+    }
+
+    .note-filter-box {
+        margin: 14px 0 0 14px;
+    }
+    .note-txt-box {
+        margin: 5px auto;
+        width: 250px;
+    }
+    .note-img-box {
+        margin: 5px auto;
+        width: 250px;
+    }
+    .note-video-box {
+        margin: 5px auto;
+        width: 250px;
+    }
+    .note-todos-box {
+        margin: 5px auto;
+        width: 250px;
+    }
+}
+
+@media (max-width: 370px) {
+
+    .note-filter-input {
+        width: 130px;
+    }
+    .note-img {
+        width: 200px;
+    }
+
+    .note-input {
+        width: 250px;
+    }
+
+    .note-input-box {
+        width: 280px;
+        margin: 15px auto;
+    }
+
+
+    .note-txt-box {
+        margin: 5px auto;
+        width: 210px;
+    }
+    .note-img-box {
+        margin: 5px auto;
+        width: 210px;
+    }
+    .note-video-box {
+        margin: 5px auto;
+        width: 250px;
+    }
+    .note-todos-box {
+        margin: 5px auto;
+        width: 210px;
+    }
 }

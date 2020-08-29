@@ -1,5 +1,6 @@
 import { KeepService } from '../services/keep-service.js'
 import { NotePreview } from './NotePreview.jsx'
+import { eventBus } from '../services/event-bus-service'
 import '../../../general-assets/general-css/helpers.css'
 
 
@@ -7,14 +8,20 @@ export function KeepList(props) {
 
     function onRemove(noteId) {
         KeepService.removeNote(noteId).then(props.loadNotes())
+        eventBus.emit('notify', { msg: 'Note Deleted!', type: 'success' })
     }
 
     function onSetBackgroundColor(note, color) {
         KeepService.setBackGroundColor(note, color).then(props.loadNotes())
+        eventBus.emit('notify', { msg: 'Background Color Changed!', type: 'success' })
+
     }
 
     function onSetPinnedNote(note) {
+        if (note.isPinned) eventBus.emit('notify', { msg: 'Note Unpinned!', type: 'fail' })
+        if (!note.isPinned) eventBus.emit('notify', { msg: 'Note Pinned!', type: 'success' })
         KeepService.setPinnedNote(note).then(props.loadNotes())
+        
     }
 
     function OnDoneAt(noteId, todoId) {

@@ -1,4 +1,4 @@
-import {eventBus} from '../services/event-bus-service.js'
+import { eventBus } from '../services/event-bus-service.js'
 
 export class Notification extends React.Component {
     state = {
@@ -11,7 +11,7 @@ export class Notification extends React.Component {
         this.unsubscribe = eventBus.on('notify', (data) => {
             console.log(data);
             this.setState({ isShown: true, msg: data.msg, type: data.type })
-            setTimeout(() => this.setState({ isShown: false }), 3000)
+            setTimeout(() => this.setState({ isShown: false }), 1500)
         })
     }
     componentWillUnmount() {
@@ -19,13 +19,13 @@ export class Notification extends React.Component {
     }
     render() {
         const { isShown, msg, type } = this.state
+        const currClass = (isShown) ? `notification-box ${type}` : 'hidden'
         return (
-            <div className={ `notification-box ${type}` }>
-                { isShown && <span onClick={ () => this.setState({ isShown: false }) }>X</span> }
-                { isShown && <h2>Notification - { msg }</h2> }
+            <div className={currClass}>
+                {isShown && <p>{msg}</p>}
             </div>
         )
     }
 }
 
-//        eventBus.emit('notify', { msg: 'Pet Removed', type: 'success' })
+

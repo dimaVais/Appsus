@@ -10,7 +10,8 @@ export const KeepService = {
     addNote,
     setPinnedNote,
     addTodoNote,
-    doneAt
+    doneAt,
+    sendMail
 
 }
 
@@ -40,11 +41,16 @@ function addNote(txt, type) {
             return addVideoNote(txt)
         case 'todos':
             return addTodoNote(txt)
-            break;
+        case 'mail':
+            return sendMail(txt)
         default:
             return addTextNote(txt)
     }
 
+}
+
+function sendMail(txt) {
+    console.log('sending mail:' ,txt);
 }
 
 function addTextNote(txt) {
@@ -165,7 +171,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
-        backgroundColor: '#3b5998',
+        backgroundColor: 'red',
         info: {
             txt: "Talk to mom"
         }
@@ -173,7 +179,7 @@ var notes = [{
     {
         id: makeId(),
         type: "NoteImg",
-        isPinned: false,
+        isPinned: true,
         info: {
             url: "https://thesportsrush.com/wp-content/uploads/2020/07/Kobe-bryant-and-shaq-o-neal.jpg",
             txt: "Shaq and Kobe💔"
@@ -215,7 +221,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
-        backgroundColor: '#3b5998',
+        backgroundColor: 'purple',
         info: {
             txt: "Tax refund! (important)"
         }
@@ -224,7 +230,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: true,
-        backgroundColor: '#3b5998',
+        backgroundColor: 'green',
         info: {
             txt: "Make a list for the trip"
         }
@@ -232,7 +238,7 @@ var notes = [{
         id: makeId(),
         type: "NoteText",
         isPinned: false,
-        backgroundColor: '#3b5998',
+        backgroundColor: 'green',
         info: {
             txt: "Call the babysitter"
         }

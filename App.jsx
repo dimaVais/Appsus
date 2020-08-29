@@ -4,6 +4,7 @@ import { BookDetails } from 'Apps/books/pages/BookDetails.jsx'
 import { KeepApp } from 'Apps/keep/pages/KeepApp.jsx'
 import { MailApp } from 'Apps//mail/pages/MailApp.jsx'
 import { NavBar } from 'general-cmps/NavBar.jsx'
+import {Notification} from 'general-cmps/Notification.jsx'
 import 'general-assets/general-css/layout.css'
 
 const Router = ReactRouterDOM.HashRouter
@@ -27,7 +28,7 @@ export class App extends React.Component {
                     <header className={`app-header ${(this.state.showMenu) ? 'menu-open' : ''}`}>
                         <img className="logo" src="general-assets/img/logo.png" alt="logo" />
                         <img className="apps-menu-btn" onClick={this.toggleMenu} src="/general-assets/img/apps1.png" alt="" />
-
+                        <Notification />
                         <NavBar  />
                     </header>
                     <main>
@@ -39,7 +40,8 @@ export class App extends React.Component {
                             <Route component={Home} path="/" />
                         </Switch>
                     </main>
-                    <footer>Footer</footer>
+                    
+                    <footer> <img className="logo-bottom" src="general-assets/img/logo.png" alt="logo" /> All Rights Reserved.</footer>
                 </div>
             </Router>
         )
