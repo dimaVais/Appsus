@@ -28,15 +28,14 @@ export class MailPreviwe extends React.Component {
                     <input type="checkbox" className="mail-checkbox-star" />
                     <Link className="flex-row flex-start mail-link" to={`/mail/list/${this.props.mail.id}`}>
                         <p className={fromClass}>{this.props.mail.from}</p>
-                        <div className=''>
-
+                        <div className='title-body-comntainer'>
                             <p className={titleBodyClass}> <span>
                                 <LongTxt limit={80} text={`${this.props.mail.subject} - ${this.props.mail.body}`} />
                             </span></p>
                         </div>
                     </Link>
                 </div>
-                <div>
+                <div className="prev-btn-menu">
                     <UnReadMailBtn loadMails={this.props.loadMails} mailId={this.props.mail.id} />
                     <DeleteMailBtn loadMails={this.props.loadMails} mailId={this.props.mail.id} />
                 </div>

@@ -32,6 +32,13 @@ export class MailData extends React.Component {
                 body: mail.body
 
             }))
+
+   
+    }
+
+    componentDidUpdate(){
+        var params =  new URLSearchParams(this.props.location.search);
+        console.log('params', params);
     }
 
     onReplyToMail = (mail) => {

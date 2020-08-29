@@ -36,8 +36,8 @@ export class MailStatus extends React.Component {
     render() {
         return (
             <div>
-                <p>Read Mail Status:</p>
-                <div className="w3-light-grey w3-round-xlarge">
+                <p className="status-p">Read Mail Status:</p>
+                <div className="w3-light-grey w3-round-xlarge status-bar">
                     <div className="w3-container w3-blue w3-round-xlarge"
                         style={{ width: `${this.state.status}%` }}>{parseFloat(this.state.status).toFixed(2)}%</div>
                 </div>
