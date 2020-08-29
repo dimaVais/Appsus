@@ -295,6 +295,11 @@ outline: none;
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
 
+
+  .envelope-btn {
+    color: #3b5998;
+    cursor: pointer;
+}
 .color-btn {
     cursor: pointer;
     margin: 2px;
@@ -493,11 +498,11 @@ outline: none;
 
     .note-txt-box {
         margin: 5px auto;
-        width: 210px;
+        width: 230px;
     }
     .note-img-box {
         margin: 5px auto;
-        width: 210px;
+        width: 230px;
     }
     .note-video-box {
         margin: 5px auto;
@@ -505,6 +510,6 @@ outline: none;
     }
     .note-todos-box {
         margin: 5px auto;
-        width: 210px;
+        width: 230px;
     }
 }
