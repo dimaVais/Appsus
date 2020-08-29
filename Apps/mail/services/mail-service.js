@@ -16,13 +16,46 @@ export const mailService = {
 const MAIL_KEY = 'MAILS';
 
 var startMails = [
-    { id: utilService.makeId(), from: 'Moshe', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: new Date(Date.now()).toLocaleString() },
-    { id: utilService.makeId(), from: 'Moshe', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: new Date(Date.now()).toLocaleString() },
-    { id: utilService.makeId(), from: 'Moshe', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: new Date(Date.now()).toLocaleString() },
-    { id: utilService.makeId(), from: 'Moshe', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: new Date(Date.now()).toLocaleString() },
-    { id: utilService.makeId(), from: 'Moshe', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: new Date(Date.now()).toLocaleString() },
-    { id: utilService.makeId(), from: 'Haim', subject: 'Answer the Door', body: 'Pick up!', isRead: false, sentAt: new Date(Date.now()).toLocaleString() }
-
+    {
+        id: utilService.makeId(),
+        from: 'Kim Kardashian',
+        subject: 'Would Love to cooperate?',
+        body: 'Hey Dima\nI heard you are doing wonderful websites and I would like you to be my main developer.\nWe have lots of projects on the line!\nLet me know if you are interested\nKim',
+        isRead: false,
+        sentAt: new Date(Date.now()).toLocaleString()
+    },
+    {
+        id: utilService.makeId(),
+        from: 'Alon Barak',
+        subject: 'Trip Plans',
+        body: 'Hey D,\nPlease see below the new trip plan to Africa!\nLooking forward getting your response\nThanks',
+        isRead: false,
+        sentAt: new Date(Date.now()).toLocaleString()
+    },
+    {
+        id: utilService.makeId(),
+        from: 'Jenny',
+        subject: 'Missing You!',
+        body: ' Hey Dear,\n It\'s been too long since we have met and I miss you!\nLife was ok for me but had not been the same without you\nI want to meet you in Boston next week, let me know what are you up to?\nXOXO\nJenn',
+        isRead: false,
+        sentAt: new Date(Date.now()).toLocaleString()
+    },
+    {
+        id: utilService.makeId(),
+        from: 'Lebron James',
+        subject: 'Strive For Greatness',
+        body: 'Yo Dawg!\nHeard the new tune and it\'s lit as HELL! Send me a copy next time you have something new',
+        isRead: false,
+        sentAt: new Date(Date.now()).toLocaleString()
+    },
+    {
+        id: utilService.makeId(),
+        from: 'Alex Turner',
+        subject: 'Why’d You Only Call Me When You’re High ?',
+        body: 'Why’d You Only Call Me When You’re High ?',
+        isRead: false,
+        sentAt: new Date(Date.now()).toLocaleString()
+    }
 ]
 
 var mails = storageService.loadFromStorage(MAIL_KEY) || startMails;
@@ -90,7 +123,7 @@ function getReadAndUnreadCount() {
 
 function eventBusFunction() {
     eventBus.emit('changeMailRead', {
-        msg:'Mail Status changed',
+        msg: 'Mail Status changed',
         type: 'success'
     })
 }

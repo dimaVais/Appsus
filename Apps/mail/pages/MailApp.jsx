@@ -13,12 +13,20 @@ import { Notification } from '../../../general-cmps/Notification.jsx'
 
 export class MailApp extends React.Component {
 
-
     state = {
         mails: [],
         isModalShown: false,
         openMail: null,
-        ismailClicked: false
+        ismailClicked: false,
+        content: ''
+    }
+
+    componentDidMount() {
+        const content = new URLSearchParams(this.props.location.search).get('content');
+        if(content){
+            this.setState({content})
+            this.onOpenModal();
+        }
     }
 
     loadMails = () => {
@@ -37,7 +45,6 @@ export class MailApp extends React.Component {
     }
 
     render() {
-        console.log('render in home', this.state.isModalShown)
         return (
             <section>
                 <h2 className="mail-header">
@@ -51,7 +58,8 @@ export class MailApp extends React.Component {
                     </Switch>
                 </div>
                 <Modal isShown={this.state.isModalShown} toggleModal={this.onOpenModal}
-                    children={<NewMail onAddNewMail={this.onAddNewMail} toggleModal={this.onOpenModal} />} />
+                    children={<NewMail onAddNewMail={this.onAddNewMail} toggleModal={this.onOpenModal}
+                     content={this.state.content} />} />
                 <Notification />
             </section>
         )

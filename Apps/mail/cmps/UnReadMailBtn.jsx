@@ -9,6 +9,6 @@ export function UnReadMailBtn(props) {
 
     return (
         <button className="mail-unread" onClick={(ev) => { ev.stopPropagation(); onUpdateMailUnRead() }}>
-            <i class="fas fa-envelope-open"></i></button>
+            <i className="fas fa-envelope-open"></i></button>
     )
 }

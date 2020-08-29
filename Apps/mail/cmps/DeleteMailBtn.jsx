@@ -9,6 +9,6 @@ export function DeleteMailBtn(props) {
 
     return (
         <button className="mail-delete" onClick={() => { onRemoveMail() }}>
-            <i class="fas fa-trash"></i></button>
+            <i className="fas fa-trash"></i></button>
     )
 }
