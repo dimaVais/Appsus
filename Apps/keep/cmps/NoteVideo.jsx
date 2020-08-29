@@ -4,7 +4,7 @@ export function NoteVideo({ onRemove, note, onSetPinnedNote, onSetBackgroundColo
         <section>
             <div className={`note-video-box bgc-${note.backgroundColor}`}>
                 {note.info.txt && <p>{note.info.txt}</p>}
-                <iframe width="250" height="200" src={note.info.url}></iframe>
+                <iframe width="270" height="250" src={note.info.url}></iframe>
 
                 <div className="note-video-btns-box">
                     <i onClick={() => onSetPinnedNote(note)} className="fas fa-thumbtack fa-2x pin-btn"></i>

@@ -1,4 +1,4 @@
-export function NoteTodos({ onRemove, note, onSetPinnedNote, onSetBackgroundColor }) {
+export function NoteTodos({ onRemove, note, OnDoneAt, onSetPinnedNote, onSetBackgroundColor }) {
 
     function isDone(doneAt) {
         return (doneAt) ? '' : 'done'
@@ -9,9 +9,9 @@ export function NoteTodos({ onRemove, note, onSetPinnedNote, onSetBackgroundColo
         <section>
             <div className={`note-todos-box bgc-${note.backgroundColor}`}>
                 <div className="notes-todos-list">
-                    <ul>
-                        {note.info.todos.map(todo => <li className={isDone(todo.doneAt)} key={todo.id}>{todo.text}</li>)}
-                    </ul>
+                    <ol>
+                        {note.info.todos.map(todo => <li className={isDone(todo.doneAt)} onClick={() => { OnDoneAt(note.id, todo.id) }} key={todo.id}>{todo.text}</li>)}
+                    </ol>
                 </div>
                 <div className="note-todos-btns-box">
                     <i onClick={() => onSetPinnedNote(note)} className="fas fa-thumbtack fa-2x pin-btn"></i>
