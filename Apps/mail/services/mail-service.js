@@ -1,6 +1,6 @@
-import { utilService } from '../../../../services/utils-service.js'
-import { storageService } from '../../../../services/storage-service.js'
-import { eventBus } from '../../../../services/event-bus-service.js'
+import { utilService } from '../../../services/utils-service.js'
+import { storageService } from '../../../services/storage-service.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 
 
 export const mailService = {

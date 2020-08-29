@@ -4,11 +4,10 @@ import 'assets/css/mail-style.css'
 import { SideMenu } from '../cmps/SideMenu.jsx'
 import { MailList } from 'MailList.jsx'
 import { mailService } from '../services/mail-service.js'
-import { eventBus } from '../../../../services/event-bus-service.js'
-import { Modal } from '../../../../general-cmps/Modal.jsx'
+import { eventBus } from '../../../services/event-bus-service.js'
+import { Modal } from '../../../general-cmps/Modal.jsx'
 import { NewMail } from '../cmps/NewMail.jsx'
-import { MailData } from 'MailData.jsx'
-import { MailFilter } from '../cmps/MailFilter.jsx'
+import { MailData } from './MailData.jsx'
 import { Notification } from '../../../general-cmps/Notification.jsx'
 
 export class MailApp extends React.Component {
@@ -47,8 +46,7 @@ export class MailApp extends React.Component {
     render() {
         return (
             <section className="main-mail-app">
-                <h2 className="mail-header">
-                </h2>
+                <h2 className="mail-header"></h2>
                 <div className="mailapp-container flex-row">
                     <SideMenu onOpenModal={this.onOpenModal} />
                     <Switch>

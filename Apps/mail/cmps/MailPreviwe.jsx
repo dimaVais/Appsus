@@ -2,7 +2,7 @@ const { Link } = ReactRouterDOM
 import { mailService } from '../services/mail-service.js'
 import { DeleteMailBtn } from 'DeleteMailBtn.jsx'
 import { UnReadMailBtn } from './UnReadMailBtn.jsx'
-import { LongTxt } from '../../../../general-cmps/LongTxt.jsx'
+import { LongTxt } from '../../../general-cmps/LongTxt.jsx'
 
 export class MailPreviwe extends React.Component {
 
