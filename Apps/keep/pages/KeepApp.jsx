@@ -75,7 +75,10 @@ export class KeepApp extends React.Component {
 
     onAddNote = (ev) => {
         ev.preventDefault()
-        if (this.state.txtValue === '') return;
+        if (this.state.txtValue === '') {
+            eventBus.emit('notify', { msg: 'Please Enter a Text', type: 'fail' })
+            return;
+        }
         if (this.state.selectedType === 'mail') {
             this.props.history.push(`/mail/list/?content=${this.state.txtValue}`)
             return;
@@ -111,7 +114,7 @@ export class KeepApp extends React.Component {
                     </form>
                 </div>
                 <div>
-                    <KeepList loadNotes={this.loadNotes} onInputChange={this.onInputChange} onAddNote={this.onAddTextNote} notes={notes} /> {/*check onaddtextnote*/}
+                    <KeepList loadNotes={this.loadNotes} onInputChange={this.onInputChange} onAddNote={this.onAddTextNote} notes={notes} />
                 </div>
             </section>
         )

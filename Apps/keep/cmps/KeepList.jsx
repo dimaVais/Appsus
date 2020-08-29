@@ -2,9 +2,11 @@ import { KeepService } from '../services/keep-service.js'
 import { NotePreview } from './NotePreview.jsx'
 import { eventBus } from '../services/event-bus-service'
 import '../../../general-assets/general-css/helpers.css'
+const { withRouter } = ReactRouterDOM
+export const KeepList = withRouter(_KeepList)
 
-
-export function KeepList(props) {
+function _KeepList(props) {
+    
 
     function onRemove(noteId) {
         KeepService.removeNote(noteId).then(props.loadNotes())
@@ -18,7 +20,7 @@ export function KeepList(props) {
     }
 
     function onSetPinnedNote(note) {
-        if (note.isPinned) eventBus.emit('notify', { msg: 'Note Unpinned!', type: 'fail' })
+        if (note.isPinned) eventBus.emit('notify', { msg: 'Note Unpinned!', type: 'success' })
         if (!note.isPinned) eventBus.emit('notify', { msg: 'Note Pinned!', type: 'success' })
         KeepService.setPinnedNote(note).then(props.loadNotes())
         
@@ -29,7 +31,10 @@ export function KeepList(props) {
         props.loadNotes();
     }
 
+    function onSendMail(note) {
 
+        props.history.push(`/mail/list/?content=${note.info.txt}`)
+    }
 
     const { notes } = props
     const pinnedNotes = notes.filter((note) => note.isPinned);
@@ -43,6 +48,7 @@ export function KeepList(props) {
                     return (
                         <li key={pinnedNote.id}>
                             <NotePreview
+                            onSendMail={onSendMail}
                                 note={pinnedNote}
                                 OnDoneAt={OnDoneAt}
                                 onSetPinnedNote={onSetPinnedNote}
@@ -59,6 +65,7 @@ export function KeepList(props) {
                     return (
                         <li key={note.id}>
                             <NotePreview
+                            onSendMail={onSendMail}
                                 note={note}
                                 OnDoneAt={OnDoneAt}
                                 onSetPinnedNote={onSetPinnedNote}

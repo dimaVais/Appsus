@@ -29,7 +29,7 @@ export class App extends React.Component {
                         <img className="logo" src="general-assets/img/logo.png" alt="logo" />
                         <img className="apps-menu-btn" onClick={this.toggleMenu} src="/general-assets/img/apps1.png" alt="" />
                         <Notification />
-                        <NavBar  />
+                        <NavBar toggleMenu={this.toggleMenu} />
                     </header>
                     <main>
                         <Switch>

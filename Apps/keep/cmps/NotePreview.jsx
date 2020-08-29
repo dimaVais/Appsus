@@ -4,12 +4,12 @@ import {NoteVideo} from 'NoteVideo.jsx'
 import {NoteTodos} from 'NoteTodos.jsx'
 
 
-export function NotePreview({note, onRemove, OnDoneAt, onSetPinnedNote, onSetBackgroundColor}) {
+export function NotePreview({note, onRemove, OnDoneAt, onSendMail, onSetPinnedNote, onSetBackgroundColor}) {
 
 
     switch (note.type) {
         case 'NoteText':
-            return <NoteTxt onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
+            return <NoteTxt onSendMail={onSendMail} onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
         case 'NoteImg':
             return <NoteImg onRemove={onRemove} onSetPinnedNote={onSetPinnedNote} onSetBackgroundColor={onSetBackgroundColor} note={note}/>
         case 'NoteVideo':
