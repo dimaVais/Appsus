@@ -39,6 +39,7 @@ export class App extends React.Component {
                             <Route component={Home} path="/" />
                         </Switch>
                     </main>
+                    <footer>Footer</footer>
                 </div>
             </Router>
         )

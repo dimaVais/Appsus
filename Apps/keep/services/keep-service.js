@@ -9,7 +9,8 @@ export const KeepService = {
     setBackGroundColor,
     addNote,
     setPinnedNote,
-    addTodoNote
+    addTodoNote,
+    doneAt
 
 }
 
@@ -65,10 +66,11 @@ function changeText(note, text) {
 }
 
 function addImgNote(text) {
+    if (!text.includes('http')) return;
     const note = {
         id: makeId(),
         type: "NoteImg",
-        isPinned: true,
+        isPinned: false,
         info: {
             url: text,
             txt: ''
@@ -80,6 +82,7 @@ function addImgNote(text) {
 }
 
 function addVideoNote(text) {
+    if (!text.includes('http')) return;
     let videoId = text.split('=')
     videoId = videoId[1]
 
@@ -121,7 +124,6 @@ function addTodoNote(txt) {
 
 }
 
-
 function setPinnedNote(note) {
     note.isPinned = !note.isPinned
     return Promise.resolve(notes);
@@ -132,6 +134,14 @@ function setBackGroundColor(note, color) {
     return Promise.resolve(notes);
 }
 
+function doneAt(noteId, todoId) {
+    let editedNotes = [...notes];
+    const noteIdx = editedNotes.findIndex(note => note.id === noteId)
+    const todoIdx = editedNotes[noteIdx].info.todos.findIndex(todo => todo.id === todoId)
+    const doneAt = editedNotes[noteIdx].info.todos[todoIdx].doneAt
+    editedNotes[noteIdx].info.todos[todoIdx].doneAt = (doneAt) ? null : Date.now();
+    notes = editedNotes
+}
 
 var notes = [{
         id: makeId(),
@@ -148,7 +158,7 @@ var notes = [{
         isPinned: false,
         backgroundColor: '#3b5998',
         info: {
-            txt: "Buy eggs for dinner to make eggs salad"
+            txt: "Buy eggs for dinner to make egg salad"
         }
     },
     {
@@ -187,15 +197,15 @@ var notes = [{
         isPinned: true,
         backgroundColor: '#3b5998',
         info: {
-            txt: "How was it:",
+            txt: "Take a woman",
             todos: [{
                     id: makeId(),
-                    text: "Do that",
-                    doneAt: null
+                    text: "Take a woman",
+                    doneAt: 187111111
                 },
                 {
                     id: makeId(),
-                    text: "Do this",
+                    text: "Bulid her a home",
                     doneAt: 187111111
                 }
             ]
@@ -221,7 +231,7 @@ var notes = [{
     }, {
         id: makeId(),
         type: "NoteText",
-        isPinned: true,
+        isPinned: false,
         backgroundColor: '#3b5998',
         info: {
             txt: "Call the babysitter"
@@ -233,7 +243,7 @@ var notes = [{
         type: "NoteVideo",
         isPinned: true,
         info: {
-            url: "https://www.youtube.com/embed/0RyInjfgNc4",
+            url: "https://www.youtube.com/embed/f7e-EFWH3Z4",
             txt: ''
         },
         backgroundColor: '#3b5998'
@@ -242,23 +252,6 @@ var notes = [{
 
 
 
-    // {
-    //     id: makeId(),
-    //     type: "NoteTodos",
-    //     info: {
-    //         label: "How was it:",
-    //         todos: [{
-    //                 txt: "Do that",
-    //                 doneAt: null
-    //             },
-    //          backgroundColor: '#3b5998',
-    //             {
-    //                 txt: "Do this",
-    //                 doneAt: 187111111
-    //             }
-    //         ]
-    //     }
-    // }
 ];
 
 

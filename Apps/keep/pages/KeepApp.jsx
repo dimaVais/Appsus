@@ -14,7 +14,7 @@ export class KeepApp extends React.Component {
         txtValue: '',
         notes: [],
         filterBy: '',
-        placeholder: 'Choose Type'
+        placeholder: 'Choose Type or Just Enter a Note'
 
     }
 
@@ -62,6 +62,8 @@ export class KeepApp extends React.Component {
                 this.setState({ selectedType: type, placeholder: 'What Needs to Be Done?' });
                 break;
         }
+
+
     }
 
     onKeyPressed = (ev) => {
@@ -70,9 +72,12 @@ export class KeepApp extends React.Component {
 
     onAddNote = (ev) => {
         ev.preventDefault()
-        KeepService.addNote(this.state.txtValue , this.state.selectedType)
+        if (this.state.txtValue === '') return;
+        KeepService.addNote(this.state.txtValue, this.state.selectedType)
             .then(res => this.setState({ notes: res }))
     }
+
+
 
 
     render() {
@@ -84,16 +89,19 @@ export class KeepApp extends React.Component {
                 {<NoteFilter onFilter={this.setFilter} filterBy={this.state.filterBy} />}
                 <div className="note-input-box">
                     <form className="form-box">
-                        <input className="note-input" onKeyDown={this.onKeyPressed}  placeholder={this.state.placeholder} type="text" value={this.state.txtValue} onChange={this.onInputChange} />
-                        <i onClick={this.onAddNote} className="far fa-plus-square fa-2x add-note-btn"></i>
-                        <i onClick={() => this.onSelectType('text')} className="fas fa-comment-dots fa-2x add-note-btn"></i>
-                        <i onClick={() => this.onSelectType('image')} className="fas fa-camera-retro fa-2x add-note-btn"></i>
-                        <i onClick={() => this.onSelectType('video')} className="fas fa-video fa-2x add-note-btn"></i>
-                        <i onClick={() => this.onSelectType('todos')} className="fas fa-tasks fa-2x add-note-btn"></i>
+                        <input className="note-input" onKeyDown={this.onKeyPressed} placeholder={this.state.placeholder} type="text" value={this.state.txtValue} onChange={this.onInputChange} />
+                        
+                        <div className="control-punnel-btns">
+                        <i onClick={this.onAddNote} className="fas fa-plus-circle fa-2x add-note-btn plus"></i>
+                        <i onClick={() => this.onSelectType('text')} className={`fas fa-comment-dots fa-2x add-note-btn ${this.state.selectedType === 'text' ? 'active-btn' : '' }`}></i>
+                        <i onClick={() => this.onSelectType('image')} className={`fas fa-camera-retro fa-2x add-note-btn ${this.state.selectedType === 'image' ? 'active-btn' : '' }`}></i>
+                        <i onClick={() => this.onSelectType('video')} className={`fas fa-video fa-2x add-note-btn ${this.state.selectedType === 'video' ? 'active-btn' : '' }`}></i>
+                        <i onClick={() => this.onSelectType('todos')} className={`fas fa-tasks fa-2x add-note-btn ${this.state.selectedType === 'todos' ? 'active-btn' : '' }`}></i>
+                        </div>
                     </form>
                 </div>
                 <div>
-                    <KeepList loadNotes={this.loadNotes} onInputChange={this.onInputChange} onAddNote={this.onAddTextNote} notes={notes} />
+                    <KeepList loadNotes={this.loadNotes}  onInputChange={this.onInputChange} onAddNote={this.onAddTextNote} notes={notes} /> {/*check onaddtextnote*/}
                 </div>
             </section>
         )

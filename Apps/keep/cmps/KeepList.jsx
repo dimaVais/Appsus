@@ -1,8 +1,7 @@
-// import { NoteTxt } from 'NoteTxt.jsx'
 import { KeepService } from '../services/keep-service.js'
-
-import '../../../general-assets/general-css/helpers.css'
 import { NotePreview } from './NotePreview.jsx'
+import '../../../general-assets/general-css/helpers.css'
+
 
 export function KeepList(props) {
 
@@ -16,7 +15,11 @@ export function KeepList(props) {
 
     function onSetPinnedNote(note) {
         KeepService.setPinnedNote(note).then(props.loadNotes())
+    }
 
+    function OnDoneAt(noteId, todoId) {
+        KeepService.doneAt(noteId, todoId);
+        props.loadNotes();
     }
 
 
@@ -27,30 +30,36 @@ export function KeepList(props) {
 
     return (
         <div className="notes-list-box">
+            <h4 className="pinned-notes-header">Pinned Notes</h4>
             <ul className="notes-list-itmes">
                 {pinnedNotes.map((pinnedNote) => {
-                return (
-                <li key={pinnedNote.id}>
-                    <NotePreview 
-                    note={pinnedNote} 
-                    onSetPinnedNote={onSetPinnedNote}
-                    onRemove={onRemove} 
-                    onSetBackgroundColor={onSetBackgroundColor} />
-                </li>
-                )})}
+                    return (
+                        <li key={pinnedNote.id}>
+                            <NotePreview
+                                note={pinnedNote}
+                                OnDoneAt={OnDoneAt}
+                                onSetPinnedNote={onSetPinnedNote}
+                                onRemove={onRemove}
+                                onSetBackgroundColor={onSetBackgroundColor} />
+                        </li>
+                    )
+                })}
             </ul>
-            <hr/>
+            <hr />
+            <h4 className="regular-notes-header">Regular Notes</h4>
             <ul className="notes-list-itmes">
                 {normalNotes.map((note) => {
-                return (
-                <li key={note.id}>
-                    <NotePreview 
-                    note={note} 
-                    onSetPinnedNote={onSetPinnedNote}
-                    onRemove={onRemove} 
-                    onSetBackgroundColor={onSetBackgroundColor} />
-                </li>
-                )})}
+                    return (
+                        <li key={note.id}>
+                            <NotePreview
+                                note={note}
+                                OnDoneAt={OnDoneAt}
+                                onSetPinnedNote={onSetPinnedNote}
+                                onRemove={onRemove}
+                                onSetBackgroundColor={onSetBackgroundColor} />
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     )

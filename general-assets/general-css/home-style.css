@@ -5,17 +5,22 @@ body {
 .home-header-box {
     background-color: white;
     text-align: center;
+    margin: 0;
 }
 .home-header-big {
     font-family: 'Sacramento', cursive;
-    font-size: 4rem;
+    font-size: 7rem;
     font-weight: 700;
-    color: #3b5998
+    color: #3b5998;
+    margin: 0;
+    padding-top: 30px;
 }
 
 .home-header-small {
     color: rgba(185, 183, 183, 0.87);
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 30px;
 }
 .home-img-box {
     background-color: white;
@@ -23,12 +28,13 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 0 50px 50px;
 
 }
 
 .home-img-mail {
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    height: 350px;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -40,8 +46,8 @@ body {
 }
 
 .home-img-keep {
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    height: 350px;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -53,8 +59,8 @@ body {
 }
 
 .home-img-book {
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    height: 350px;
     border-radius: 3px;
     cursor: pointer;
     background-color: transparent;
