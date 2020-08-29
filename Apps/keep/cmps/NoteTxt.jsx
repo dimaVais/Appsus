@@ -34,8 +34,7 @@ export class NoteTxt extends React.Component {
                     <i onClick={() => { this.props.onSetBackgroundColor(this.props.note, 'blue') }} className="fas fa-circle fa-2x blue-circle color-btn"></i>
                     <i onClick={() => { this.props.onSetBackgroundColor(this.props.note, 'green') }} className="fas fa-circle fa-2x green-circle color-btn" ></i>
                     <i onClick={() => { this.props.onSetBackgroundColor(this.props.note, 'purple') }} className="fas fa-circle fa-2x purple-circle color-btn"></i>
-                    {/* <i onClick={() => { this.props.history.push(`/mail/list/?content=${this.props.note.info.txt}`) }} className={`fas fa-envelope fa-2x add-note-btn`}></i> */}
-                    <i onClick={() => { this.props.onSendMail(this.props.note) }} className={`fas fa-envelope fa-2x add-note-btn`}></i>
+                    <i onClick={() => { this.props.onSendMail(this.props.note) }} className={`fas fa-envelope fa-2x envelope-btn`}></i>
 
                 </div>
             </div>

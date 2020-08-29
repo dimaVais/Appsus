@@ -82,7 +82,7 @@ function addImgNote(text) {
     const note = {
         id: makeId(),
         type: "NoteImg",
-        isPinned: false,
+        isPinned: true,
         info: {
             url: text,
             txt: ''
