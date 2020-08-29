@@ -22,7 +22,7 @@ export class Notification extends React.Component {
         const currClass = (isShown) ? `notification-box ${type}` : 'hidden'
         return (
             <div className={currClass}>
-                {isShown && <p>{msg}</p>}
+                {isShown && <p className="text-notification">{msg}</p>}
             </div>
         )
     }

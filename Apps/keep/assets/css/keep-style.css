@@ -439,6 +439,11 @@ outline: none;
 }
 
 @media (max-width: 420px) {
+    
+    .add-note-btn {
+        margin: 8px;
+    }
+
     .note-input-box {
         width: 320px;
         margin: 15px auto;
@@ -466,6 +471,8 @@ outline: none;
 }
 
 @media (max-width: 370px) {
+
+
 
     .note-filter-input {
         width: 130px;

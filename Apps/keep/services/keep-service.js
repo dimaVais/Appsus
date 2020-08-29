@@ -1,3 +1,5 @@
+const key = 'Mynotes'
+
 export const KeepService = {
     query,
     getNoteById,
@@ -15,9 +17,12 @@ export const KeepService = {
 
 }
 
+import { storageService } from '../../../services/storage-service.js'
+
 
 function query() {
     return Promise.resolve(notes);
+    
 }
 
 function getNoteById(noteId) {
@@ -64,6 +69,7 @@ function addTextNote(txt) {
         backgroundColor: '#3b5998'
     }
     notes.push(note);
+    storageService.saveToStorage(key, notes)
     return Promise.resolve(notes);
 }
 
@@ -84,6 +90,7 @@ function addImgNote(text) {
         backgroundColor: '#3b5998'
     }
     notes.push(note);
+    storageService.saveToStorage(key, notes)
     return Promise.resolve(notes);
 }
 
@@ -103,6 +110,7 @@ function addVideoNote(text) {
         backgroundColor: '#3b5998'
     }
     notes.push(note);
+    storageService.saveToStorage(key, notes)
     return Promise.resolve(notes);
 
 }
@@ -126,6 +134,7 @@ function addTodoNote(txt) {
         }
     }
     notes.push(newNote);
+    storageService.saveToStorage(key, notes)
     return Promise.resolve(notes);
 
 }
