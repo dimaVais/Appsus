@@ -38,7 +38,7 @@ export class AddBook extends React.Component {
             <div className="add-book-container">
                 <form action="">
                     <span>Search In Our Collection Book: </span>
-                    <input type="text" name="bookName" className="reader"
+                    <input type="text" name="bookName" className="nice-input reader"
                         onChange={this.onSearchBooks} placeholder="Search Here" />
                 </form>
                 {listRender}
