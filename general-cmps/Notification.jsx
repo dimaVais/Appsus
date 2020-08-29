@@ -1,4 +1,4 @@
-import eventBus from '../services/event-bus-service.js'
+import {eventBus} from '../services/event-bus-service.js'
 
 export class Notification extends React.Component {
     state = {
@@ -27,3 +27,5 @@ export class Notification extends React.Component {
         )
     }
 }
+
+//        eventBus.emit('notify', { msg: 'Pet Removed', type: 'success' })

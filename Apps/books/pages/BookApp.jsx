@@ -3,6 +3,7 @@ import { bookService } from '../services/book-service.js';
 import { BookList } from '../cmps/BookList.jsx';
 import { BookFilter } from '../cmps/BookFilter.jsx';
 import { AddBook } from '../cmps/AddBook.jsx';
+import { Notification } from '../../../general-cmps/Notification.jsx';
 
 
 export class BookApp extends React.Component {
@@ -47,6 +48,7 @@ export class BookApp extends React.Component {
                 </div>
                 <BookList onSelectBook={this.onSelectBook} books={booksShow}
                     onRemoveBook={this.onRemoveBook} />
+                    {/* <Notification /> */}
             </section>
         )
     }

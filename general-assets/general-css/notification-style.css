@@ -1,0 +1,12 @@
+.notification-style.css{
+    position: fixed;
+    width: 300px;
+    height: 100px;
+    color: white;
+    border-radius: 30px;
+}
+
+.success{
+
+    background-color: green;
+}
