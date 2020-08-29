@@ -5,6 +5,6 @@ export function Sent(props) {
 
     return(
 
-        <button className='Sent-btn side-btn'> <span>Sent</span></button>
+        <button className='Sent-btn side-btn grey-btn'> <span>Sent</span></button>
     )
 }

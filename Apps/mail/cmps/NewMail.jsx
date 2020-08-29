@@ -39,7 +39,7 @@ export class NewMail extends React.Component {
     }
 
     submitForm = (ev) => {
-        ev.preventDefault()
+        ev.preventDefault();
         this.props.onAddNewMail(this.state.mail)
         this.setState({ mail: { from: '', subject: '', txt: '' } })
         this.props.toggleModal();

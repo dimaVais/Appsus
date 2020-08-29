@@ -21,7 +21,7 @@ var startMails = [
         from: 'Kim Kardashian',
         subject: 'Would Love to cooperate?',
         body: 'Hey Dima\nI heard you are doing wonderful websites and I would like you to be my main developer.\nWe have lots of projects on the line!\nLet me know if you are interested\nKim',
-        isRead: false,
+        isRead: true,
         sentAt: new Date(Date.now()).toLocaleString()
     },
     {
@@ -37,7 +37,7 @@ var startMails = [
         from: 'Jules Winnfield',
         subject: 'Did You Read the Bible Brett?',
         body: 'The path of the righteous man is beset of all sides by the iniquities of the selfish and the tyranny of evil me. Blessed is he who, in the name of the charity and good will, shepherds the weak through the valley of darkness, for he is truly his brothers keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy my brothers. And you will know my name is the Lord when I lay my vengeance upon thee.',
-        isRead: false,
+        isRead: true,
         sentAt: new Date(Date.now()).toLocaleString()
     },
     {
@@ -45,15 +45,15 @@ var startMails = [
         from: 'Jenny',
         subject: 'Missing You!',
         body: ' Hey Dear,\n It\'s been too long since we have met and I miss you!\nLife was ok for me but had not been the same without you\nI want to meet you in Boston next week, let me know what are you up to?\nXOXO\nJenn',
-        isRead: false,
+        isRead: true,
         sentAt: new Date(Date.now()).toLocaleString()
     },
     {
         id: utilService.makeId(),
         from: 'Lebron James',
         subject: 'Strive For Greatness',
-        body: 'Yo Dawg!\nHeard the new tune and it\'s lit as HELL! Send me a copy next time you have something new',
-        isRead: false,
+        body: 'Yo Dawg!\nHeard the new tune and it\'s lit as HELL!\n Send me a copy next time you have something new!',
+        isRead: true,
         sentAt: new Date(Date.now()).toLocaleString()
     },
     {
@@ -86,7 +86,7 @@ var startMails = [
         from: 'Marsellus Wallace',
         subject: 'Deal With Butch',
         body: 'Fuck pride. Pride only hurts, it never helps',
-        isRead: false,
+        isRead: true,
         sentAt: new Date(Date.now()).toLocaleString()
     },
     {
@@ -94,7 +94,7 @@ var startMails = [
         from: 'Jules Winnfield',
         subject: 'Breakfast at Tiffani',
         body: 'If my answers frighten you then you should cease asking scary questions',
-        isRead: false,
+        isRead: true,
         sentAt: new Date(Date.now()).toLocaleString()
     }
 

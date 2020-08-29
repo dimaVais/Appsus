@@ -43,12 +43,10 @@ export class BookApp extends React.Component {
         return (
             <section className="book-app">
                 <div className="flex-col align-center">
-                    {/* <div className="flex-row"><span>Filter Book: </span> <BookFilter onFilter={this.setFilter} /></div> */}
                      <AddBook loadbooks={this.loadbooks} />
                 </div>
                 <BookList onSelectBook={this.onSelectBook} books={booksShow}
                     onRemoveBook={this.onRemoveBook} />
-                    {/* <Notification /> */}
             </section>
         )
     }

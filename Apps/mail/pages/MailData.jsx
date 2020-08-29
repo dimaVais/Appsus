@@ -4,7 +4,7 @@ import 'assets/css/mail-style.css'
 import { SideMenu } from '../cmps/SideMenu.jsx'
 import { MailList } from './MailList.jsx'
 import { mailService } from '../services/mail-service.js'
-import { Modal } from '../../../../general-cmps/Modal.jsx'
+import { Modal } from '../../../general-cmps/Modal.jsx'
 import { NewMail } from '../cmps/NewMail.jsx'
 import { UnReadMailBtn } from '../cmps/UnReadMailBtn.jsx'
 import { DeleteMailBtn } from '../cmps/DeleteMailBtn.jsx'
@@ -41,9 +41,7 @@ export class MailData extends React.Component {
         this.setState({ isModalShown: !this.state.isModalShown });
     }
 
-
     render() {
-        console.log(this.state.subject, this.state.body);
         return (
             <div className="inner-page-container data-container flex-col">
                 <h2>{this.state.subject}</h2>

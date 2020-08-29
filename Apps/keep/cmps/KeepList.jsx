@@ -1,6 +1,6 @@
 import { KeepService } from '../services/keep-service.js'
 import { NotePreview } from './NotePreview.jsx'
-import { eventBus } from '../services/event-bus-service'
+import { eventBus } from '../../../services/event-bus-service'
 import '../../../general-assets/general-css/helpers.css'
 const { withRouter } = ReactRouterDOM
 export const KeepList = withRouter(_KeepList)
