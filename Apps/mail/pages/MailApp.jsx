@@ -4,7 +4,7 @@ import 'assets/css/mail-style.css'
 import { SideMenu } from '../cmps/SideMenu.jsx'
 import { MailList } from 'MailList.jsx'
 import { mailService } from '../services/mail-service.js'
-import  {eventBus}  from '../../../../services/event-bus-service.js'
+import { eventBus } from '../../../../services/event-bus-service.js'
 import { Modal } from '../../../../general-cmps/Modal.jsx'
 import { NewMail } from '../cmps/NewMail.jsx'
 import { MailData } from 'MailData.jsx'
@@ -23,8 +23,8 @@ export class MailApp extends React.Component {
 
     componentDidMount() {
         const content = new URLSearchParams(this.props.location.search).get('content');
-        if(content){
-            this.setState({content})
+        if (content) {
+            this.setState({ content })
             this.onOpenModal();
         }
     }
@@ -48,7 +48,6 @@ export class MailApp extends React.Component {
         return (
             <section>
                 <h2 className="mail-header">
-                    Mail
                 </h2>
                 <div className="mailapp-container flex-row">
                     <SideMenu onOpenModal={this.onOpenModal} />
@@ -59,7 +58,7 @@ export class MailApp extends React.Component {
                 </div>
                 <Modal isShown={this.state.isModalShown} toggleModal={this.onOpenModal}
                     children={<NewMail onAddNewMail={this.onAddNewMail} toggleModal={this.onOpenModal}
-                     content={this.state.content} />} />
+                        content={this.state.content} />} />
                 <Notification />
             </section>
         )

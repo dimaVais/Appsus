@@ -16,13 +16,19 @@ export class SideMenu extends React.Component {
         return (
 
             <div className='main-side-container flex-col'>
-                <div className='flex-col'>
+                <div className="side-btn hamburger">
+                    <i className="bars fas fa-bars z-index"></i>
+                    <i className="close fas fa-times hidden"></i>
+                </div>
+                <div className='side-btn-container flex-col'>
                     <Compose onOpenModal={this.props.onOpenModal} />
                     <Inbox />
                     <Starred />
                     <Sent />
                 </div>
+
                 <MailStatus />
+
             </div>
         )
     }

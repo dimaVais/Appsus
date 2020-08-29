@@ -52,16 +52,16 @@ export class NewMail extends React.Component {
                 <div><h3>Compose your Mail: </h3>  <button >Send</button></div>
                 <div className="flex-row ">
                     <label htmlFor="from" >From:</label>
-                    <input type="text" value={this.state.mail.from} name="from" className="input-from"
+                    <input type="text" value={this.state.mail.from} name="from" className="input-from nice-input"
                         placeholder="From:" onChange={this.onInputChange} />
                 </div>
                 <div className="flex-row">
                     <label htmlFor="subject" >Subject:</label>
-                    <input type="text" name="subject" value={this.state.mail.subject} className="input-subject"
+                    <input type="text" name="subject" value={this.state.mail.subject} className="input-subject nice-input"
                         placeholder="subject:" onChange={this.onInputChange} />
                 </div>
                 <label htmlFor="txt"></label>
-                <textarea type="textarea" value={this.state.mail.txt} placeholder="Write mail here" name="txt" rows="8" cols="50"
+                <textarea type="textarea" className="nice-input" value={this.state.mail.txt} placeholder="Write mail here" name="txt" rows="8" cols="50"
                     onChange={this.onInputChange} />
             </form>
 

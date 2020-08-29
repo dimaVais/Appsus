@@ -72,3 +72,9 @@
 .align-center {
     align-items: center;
 }
+
+.nice-input{
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid #3b5998;
+}
