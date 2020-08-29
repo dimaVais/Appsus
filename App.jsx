@@ -27,7 +27,7 @@ export class App extends React.Component {
                 <div>
                     <header className={`app-header ${(this.state.showMenu) ? 'menu-open' : ''}`}>
                         <img className="logo" src="general-assets/img/logo.png" alt="logo" />
-                        <img className="apps-menu-btn" onClick={this.toggleMenu} src="/general-assets/img/apps1.png" alt="" />
+                        <img className="apps-menu-btn" onClick={this.toggleMenu} src="./general-assets/img/apps1.png" alt="" />
                         <Notification />
                         <NavBar toggleMenu={this.toggleMenu} />
                     </header>
