@@ -46,7 +46,7 @@ export class MailApp extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className="main-mail-app">
                 <h2 className="mail-header">
                 </h2>
                 <div className="mailapp-container flex-row">

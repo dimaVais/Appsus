@@ -1,9 +1,9 @@
 import '../assets/css/book-style.css'
 import { bookService } from '../services/book-service.js';
 import { BookList } from '../cmps/BookList.jsx';
-import { BookFilter } from '../cmps/BookFilter.jsx';
+// import { BookFilter } from '../cmps/BookFilter.jsx';
 import { AddBook } from '../cmps/AddBook.jsx';
-import { Notification } from '../../../general-cmps/Notification.jsx';
+// import { Notification } from '../../../general-cmps/Notification.jsx';
 
 
 export class BookApp extends React.Component {
@@ -43,7 +43,7 @@ export class BookApp extends React.Component {
         return (
             <section className="book-app">
                 <div className="flex-col align-center">
-                    <div className="flex-row"><span>Filter Book: </span> <BookFilter onFilter={this.setFilter} /></div>
+                    {/* <div className="flex-row"><span>Filter Book: </span> <BookFilter onFilter={this.setFilter} /></div> */}
                      <AddBook loadbooks={this.loadbooks} />
                 </div>
                 <BookList onSelectBook={this.onSelectBook} books={booksShow}
