@@ -190,8 +190,8 @@ var notes = [{
         type: "NoteImg",
         isPinned: true,
         info: {
-            url: "https://thesportsrush.com/wp-content/uploads/2020/07/Kobe-bryant-and-shaq-o-neal.jpg",
-            txt: "Shaq and Kobe💔"
+            url: "https://www.edgeofexistence.org/wp-content/uploads/2018/01/Kakapo-1_SHANE-MCINNES.jpg",
+            txt: "Best Bird Ever"
         },
         backgroundColor: '#3b5998'
 
@@ -258,15 +258,11 @@ var notes = [{
         type: "NoteVideo",
         isPinned: true,
         info: {
-            url: "https://www.youtube.com/embed/f7e-EFWH3Z4",
+            url: "https://www.youtube.com/embed/hTWKbfoikeg",
             txt: ''
         },
         backgroundColor: '#3b5998'
     }
-
-
-
-
 ];
 
 

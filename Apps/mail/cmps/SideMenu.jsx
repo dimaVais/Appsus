@@ -35,8 +35,8 @@ export class SideMenu extends React.Component {
                 <div className={menuClass}>
                     <Compose onOpenModal={this.props.onOpenModal} />
                     <Inbox />
-                    <Starred />
-                    <Sent />
+                    {/* <Starred />
+                    <Sent /> */}
                 </div>
 
                 <MailStatus />

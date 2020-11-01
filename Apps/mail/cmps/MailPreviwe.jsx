@@ -24,8 +24,6 @@ export class MailPreviwe extends React.Component {
             <div className="msg-container flex-row space-between align-center"
                 onClick={() => { this.onUpdateMailRead(this.props.mail.id) }}>
                 <div className="flex-row space-around align-center">
-                    <input type="checkbox" className="mail-checkbox" />
-                    <input type="checkbox" className="mail-checkbox-star" />
                     <Link className="flex-row flex-start mail-link" to={`/mail/list/${this.props.mail.id}`}>
                         <p className={fromClass}>{this.props.mail.from}</p>
                         <div className='title-body-comntainer'>

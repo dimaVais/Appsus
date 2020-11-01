@@ -79,7 +79,9 @@
 
 .details-container {
     padding: 20px;
-    width: 100%
+    width: 100%;
+    max-width:1500px;
+    margin: auto;
 }
 
 .detail-img {
@@ -89,7 +91,8 @@
 }
 
 .show-container {
-    width: 100%;
+    margin: auto;
+    width: 1200px;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fill, 280px);
