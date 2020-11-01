@@ -16,10 +16,52 @@
 }
 
 .modal-content {
-    background: white;
-    max-width: 90%;
-    min-width: 80%;
-    min-height: 400px;
+    background-image: url('../img/modal.jpg');
+    background-repeat: no-repeat;
+    max-width: 50%;
+    min-width: 50%;
+    min-height: 500px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     position: relative;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+}
+
+@media Screen and (max-width:1125px) {
+    .modal-content {
+        max-width: 60%;
+        min-width: 60%;
+    }
+}
+
+@media Screen and (max-width:850px) {
+    .modal-content {
+        max-width: 70%;
+        min-width: 70%;
+    }
+}
+
+@media Screen and (max-width:600px) {
+    .modal-content {
+        max-width: 80%;
+        min-width: 80%;
+    }
+}
+
+@media Screen and (max-width:500) {
+    .modal-content {
+        min-width: 100%;
+    }
 }

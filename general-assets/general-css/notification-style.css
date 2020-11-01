@@ -1,0 +1,27 @@
+.notification-box {
+    position: fixed;
+    top: 25px;
+    left: 150px;
+    width: 150px;
+    color: rgb(236, 234, 234);
+    border-radius: 7px;
+    opacity: 1;
+    transition: opacity 0.3 ease-in-out;
+}
+
+.success {
+    background-color: rgb(89, 170, 89);
+}
+
+.fail { 
+    background-color: rgb(209, 100, 100); 
+}
+
+.text-notification {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+

@@ -1,7 +1,114 @@
-.active-nav {
-    color: firebrick;
+.main-nav {
+    background-color: white;
+    display: flex;
+    top: 0;
+    right: 20px;
+    transform: translateX(120%);
+    transition: transform .8s;
+    
+
 }
 
-.nav-bar-box {
-    background-color: #3b5998
+.main-nav:last-child {
+    margin-right: 70px;
+}
+
+header.menu-open .main-nav {
+    transform: translateX(0);
+}
+
+
+
+
+
+.navLink {
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-bar-home-img {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+.nav-bar-mail-img {
+    padding-top: 4px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+.nav-bar-keep-img {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+.nav-bar-book-img {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+@media (max-width: 500px) {
+
+    .main-nav {
+        background-color: white;
+        display: flex;
+        top: 0;
+        right: 20px;
+        transform: translateY(-120%);
+        transition: transform .8s;
+        
+    
+    }
+    
+    .main-nav:last-child {
+        margin-right: 70px;
+    }
+    
+    header.menu-open .main-nav {
+        transform: translateY(0);
+    }
+    
+    .main-nav {
+        right: -10px;
+    }
+
+    .navLink {
+        margin: 15px;
+
+    }
+    .nav-bar-home-img {
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+    }
+    
+    .nav-bar-mail-img {
+        padding-top: 4px;
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+    }
+    
+    .nav-bar-keep-img {
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+    }
+    
+    .nav-bar-book-img {
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+    }
+    
+    .main-nav:last-child {
+        margin-right: 60px;
+    }
+    
 }

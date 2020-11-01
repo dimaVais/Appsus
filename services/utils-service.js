@@ -13,8 +13,6 @@ function getRandomColor() {
   return color;
 }
 
-
-
 function getRandomInt(min, max) {
   var randomNumber = Math.floor(Math.random() * (max - min) + min);
   return randomNumber;
