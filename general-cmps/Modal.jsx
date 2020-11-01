@@ -11,8 +11,8 @@ export class Modal extends React.Component {
     closeModal = () => {
         this.setState({ isShown: false })
     }
-
-    render() {
+    //dd
+    render() { 
         console.log('inModal',this.state.isShown);
         const { isShown } = this.state.isShown
         const { children } = this.props
